@@ -19,7 +19,7 @@
 		<link rel="stylesheet" href="lib/swiper/css/swiper.min.css">
 		<script src="lib/swiper/js/swiper.min.js"></script>
 		<!-- Prevent iOs slow click -->
-		<script src="lib/fastclick.js"></script>
+		<!--<script src="lib/fastclick.js"></script>
 		<!-- Custom -->
 		<link rel="stylesheet" type="text/css" href="css/index.css">
 	</head>
@@ -46,7 +46,7 @@
 				<div class="swiper-wrapper">
 
 					<!-- Onglet Expert -->
-					<div class="swiper-slide tab-section d-flex flex-wrap align-items-center justify-content-around px-3 pb-5">
+					<div class="swiper-slide tab-section d-flex flex-wrap align-items-start justify-content-around px-3 pb-5">
 						<div class="col-md-8">
 							<div class="card bg-light mt-3 mb-5">
 								<h5 id="expert" class="card-header">Expert</h5>
@@ -130,7 +130,7 @@
 					</div>
 
 					<!-- Onglet Client -->
-					<div class="swiper-slide tab-section d-flex flex-wrap align-items-center justify-content-around px-3 pb-5">
+					<div class="swiper-slide tab-section d-flex flex-wrap align-items-start justify-content-around px-3 pb-5">
 						<div class="col-md-8">
 							<div class="card bg-light mt-3 mb-5">
 								<h5 class="card-header">Fiche client</h5>
@@ -226,7 +226,7 @@
 					</div>
 
 					<!-- Onglet Examen -->
-					<div class="swiper-slide tab-section d-flex flex-wrap align-items-center justify-content-around px-3 pb-5" name="examen">
+					<div class="swiper-slide tab-section d-flex flex-wrap align-items-start justify-content-around px-3 pb-5">
 						<!-- Card Examen -->
 						<div class="col-md-8">
 							<div class="card bg-light mt-3 mb-5">
@@ -502,18 +502,18 @@
 									<div class="row pb-3">
 										<div class="col">
 											<h6><label for="vehicle-body">Type de carrosserie</label></h6>
-											<input id="vehicle-body" name="vehicle-body" list="vehicle-bodies" class="form-control" type="text">
-											<datalist id="vehicle-bodies">
-												<option value="Barquette">
-												<option value="Berline">
-												<option value="Berlinette">
-												<option value="Cabriolet">
-												<option value="Coach">
-												<option value="Coupé">
-												<option value="Limousine">
-												<option value="Monoplace">
-												<option value="Spider">
-											</datalist>
+											<select id="vehicle-body" name="vehicle-body" class="form-control">
+												<option value="Barquette">Barquette</option>
+												<option value="Berline">Berline</option>
+												<option value="Berlinette">Berlinette</option>
+												<option value="Break">Break</option>
+												<option value="Cabriolet">Cabriolet</option>
+												<option value="Coach">Coach</option>
+												<option value="Coupé">Coupé</option>
+												<option value="Limousine">Limousine</option>
+												<option value="Monoplace">Monoplace</option>
+												<option value="Spider">Spider</option>
+											</select>
 										</div>
 									</div>
 									<!-- Portes -->
@@ -617,8 +617,6 @@
 										<div class="col">
 											<h6><label for="front-bumper-state">Pare-choc avant</label></h6>
 											<input id="front-bumper-state" name="front-bumper-state" type="range" class="custom-range" step="10" min="0" max="100">
-										</div>
-										<div class="col-auto">
 											<br>
 											<div class="input-group">
 												<div class="custom-control custom-radio custom-control-inline">
@@ -641,8 +639,6 @@
 										<div class="col">
 											<h6><label for="rear-bumper-state">Pare-choc arrière</label></h6>
 											<input id="rear-bumper-state" name="rear-bumper-state" type="range" class="custom-range" step="10" min="0" max="100">
-										</div>
-										<div class="col-auto">
 											<br>
 											<div class="input-group">
 												<div class="custom-control custom-radio custom-control-inline">
@@ -665,8 +661,6 @@
 										<div class="col">
 											<h6><label for="calender-state">Calandre</label></h6>
 											<input id="calender-state" name="calender-state" type="range" class="custom-range" step="10" min="0" max="100">
-										</div>
-										<div class="col-auto">
 											<br>
 											<div class="input-group">
 												<div class="custom-control custom-radio custom-control-inline">
@@ -689,8 +683,6 @@
 										<div class="col">
 											<h6><label for="hood-state">Capot</label></h6>
 											<input id="hood-state" name="hood-state" type="range" class="custom-range" step="10" min="0" max="100">
-										</div>
-										<div class="col-auto">
 											<br>
 											<div class="input-group">
 												<div class="custom-control custom-radio custom-control-inline">
@@ -713,8 +705,6 @@
 										<div class="col">
 											<h6><label for="left-wing-state">Aile gauche</label></h6>
 											<input id="left-wing-state" name="left-wing-state" type="range" class="custom-range" step="10" min="0" max="100">
-										</div>
-										<div class="col-auto">
 											<br>
 											<div class="input-group">
 												<div class="custom-control custom-radio custom-control-inline">
@@ -737,8 +727,6 @@
 										<div class="col">
 											<h6><label for="right-wing-state">Aile droite</label></h6>
 											<input id="right-wing-state" name="right-wing-state" type="range" class="custom-range" step="10" min="0" max="100">
-										</div>
-										<div class="col-auto">
 											<br>
 											<div class="input-group">
 												<div class="custom-control custom-radio custom-control-inline">
@@ -761,8 +749,6 @@
 										<div class="col">
 											<h6><label for="windshield-state">Pare-brise</label></h6>
 											<input id="windshield-state" name="windshield-state" type="range" class="custom-range" step="10" min="0" max="100">
-										</div>
-										<div class="col-auto">
 											<br>
 											<div class="input-group">
 												<div class="custom-control custom-radio custom-control-inline">
@@ -785,8 +771,6 @@
 										<div class="col">
 											<h6><label for="side-windows-state">Glaces latérales</label></h6>
 											<input id="side-windows-state" name="side-windows-state" type="range" class="custom-range" step="10" min="0" max="100">
-										</div>
-										<div class="col-auto">
 											<br>
 											<div class="input-group">
 												<div class="custom-control custom-radio custom-control-inline">
@@ -809,8 +793,6 @@
 										<div class="col">
 											<h6><label for="overhead-state">Pavillon</label></h6>
 											<input id="overhead-state" name="overhead-state" type="range" class="custom-range" step="10" min="0" max="100">
-										</div>
-										<div class="col-auto">
 											<br>
 											<div class="input-group">
 												<div class="custom-control custom-radio custom-control-inline">
@@ -833,8 +815,6 @@
 										<div class="col">
 											<h6><label for="left-door-state">Porte avant gauche</label></h6>
 											<input id="left-door-state" name="left-door-state" type="range" class="custom-range" step="10" min="0" max="100">
-										</div>
-										<div class="col-auto">
 											<br>
 											<div class="input-group">
 												<div class="custom-control custom-radio custom-control-inline">
@@ -857,8 +837,6 @@
 										<div class="col">
 											<h6><label for="right-door-state">Porte avant droite</label></h6>
 											<input id="right-door-state" name="right-door-state" type="range" class="custom-range" step="10" min="0" max="100">
-										</div>
-										<div class="col-auto">
 											<br>
 											<div class="input-group">
 												<div class="custom-control custom-radio custom-control-inline">
@@ -881,8 +859,6 @@
 										<div class="col">
 											<h6><label for="rear-window-state">Lunette arrière</label></h6>
 											<input id="rear-window-state" name="rear-window-state" type="range" class="custom-range" step="10" min="0" max="100">
-										</div>
-										<div class="col-auto">
 											<br>
 											<div class="input-group">
 												<div class="custom-control custom-radio custom-control-inline">
@@ -905,8 +881,6 @@
 										<div class="col">
 											<h6><label for="trunk-lid-state">Couvercle du coffre</label></h6>
 											<input id="trunk-lid-state" name="trunk-lid-state" type="range" class="custom-range" step="10" min="0" max="100">
-										</div>
-										<div class="col-auto">
 											<br>
 											<div class="input-group">
 												<div class="custom-control custom-radio custom-control-inline">
@@ -929,8 +903,6 @@
 										<div class="col">
 											<h6><label for="trunk-floor-state">Plancher de coffre</label></h6>
 											<input id="trunk-floor-state" name="trunk-floor-state" type="range" class="custom-range" step="10" min="0" max="100">
-										</div>
-										<div class="col-auto">
 											<br>
 											<div class="input-group">
 												<div class="custom-control custom-radio custom-control-inline">
@@ -953,8 +925,6 @@
 										<div class="col">
 											<h6><label for="chassis-state">Chassis</label></h6>
 											<input id="chassis-state" name="chassis-state" type="range" class="custom-range" step="10" min="0" max="100">
-										</div>
-										<div class="col-auto">
 											<br>
 											<div class="input-group">
 												<div class="custom-control custom-radio custom-control-inline">
@@ -978,7 +948,7 @@
 
 						<div class="col-sm-auto">
 							<!-- Card Peinture -->
-							<div class="card bg-light mt-3 mb-5" style="min-width: 300px">
+							<div class="card bg-light mt-3 mb-5">
 								<h5 class="card-header">Peinture</h5>
 								<div class="card-body">
 									<!-- Couleur -->
@@ -1026,7 +996,7 @@
 							</div>
 
 							<!-- Card Chromes --*>
-							<div class="card bg-light mt-3 mb-5 style="min-width: 300px"">
+							<div class="card bg-light mt-3 mb-5">
 								<h5 class="card-header">Chromes</h5>
 								<div class="card-body">
 									<!-- Entretien --*>
@@ -1054,23 +1024,22 @@
 							</div>
 	
 							<!-- Card Roues -->
-							<div class="card bg-light mt-3 mb-5" style="min-width: 300px">
+							<div class="card bg-light mt-3 mb-5">
 								<h5 class="card-header">Roues</h5>
 								<div class="card-body">
 									<!-- Type de roue  -->
 									<div class="row pb-3">
 										<div class="col">
 											<h6><label for="wheel-type">Type</label></h6>
-											<input id="wheel-type" name="wheel-type" list="wheel-types" class="form-control" type="text">
-											<datalist id="wheel-types">
-												<option value="En tôle emboutie">
-												<option value="Rayons bois">
-												<option value="Rayons chromés">
-												<option value="Alliage léger">
-												<option value="Alliage léger poli">
-												<option value="Magnésium">
-												<option value="Enjoliveurs">
-											</datalist>
+											<select id="wheel-type" name="wheel-type" class="form-control">
+												<option value="En tôle emboutie">En tôle emboutie</option>
+												<option value="Rayons bois">Rayons bois</option>
+												<option value="Rayons chromés">Rayons chromés</option>
+												<option value="Alliage léger">Alliage léger</option>
+												<option value="Alliage léger poli">Alliage léger poli</option>
+												<option value="Magnésium">Magnésium</option>
+												<option value="Enjoliveurs">Enjoliveurs</option>
+											</select>
 										</div>
 									</div>
 									<!-- Dimension avant (en pouces) -->
@@ -1115,46 +1084,44 @@
 							</div>
 
 							<!-- Card Pneus -->
-							<div class="card bg-light mt-3 mb-5" style="min-width: 300px">
+							<div class="card bg-light mt-3 mb-5">
 								<h5 class="card-header">Pneus</h5>
 								<div class="card-body">
 									<!-- Marque -->
 									<div class="row pb-3">
 										<div class="col">
 											<h6><label for="tire-brand">Marque</label></h6>
-											<input id="tire-brand" name="tire-brand" list="tire-brands" class="form-control" type="text">
-											<datalist id="tire-brands">
-												<option value="BF Goodrich">
-												<option value="Bridgestone">
-												<option value="Continental">
-												<option value="Cooper">
-												<option value="Dunlop">
-												<option value="Firestone">
-												<option value="Goodyear">
-												<option value="Hankook">
-												<option value="Kumho">
-												<option value="Lester">
-												<option value="Michelin">
-												<option value="Nokian">
-												<option value="Pirelli">
-												<option value="Toyo">
-												<option value="Uniroyal">
-												<option value="Vredestein">
-												<option value="Yokohama">
-											</datalist>
+											<select id="tire-brand" name="tire-brand" class="form-control">
+												<option value="BF Goodrich">BF Goodrich</option>
+												<option value="Bridgestone">Bridgestone</option>
+												<option value="Continental">Continental</option>
+												<option value="Cooper">Cooper</option>
+												<option value="Dunlop">Dunlop</option>
+												<option value="Firestone">Firestone</option>
+												<option value="Goodyear">Goodyear</option>
+												<option value="Hankook">Hankook</option>
+												<option value="Kumho">Kumho</option>
+												<option value="Lester">Lester</option>
+												<option value="Michelin">Michelin</option>
+												<option value="Nokian">Nokian</option>
+												<option value="Pirelli">Pirelli</option>
+												<option value="Toyo">Toyo</option>
+												<option value="Uniroyal">Uniroyal</option>
+												<option value="Vredestein">Vredestein</option>
+												<option value="Yokohama">Yokohama</option>
+											</select>
 										</div>
 									</div>
 									<!-- Type -->
 									<div class="row pb-3">
 										<div class="col">
 											<h6><label for="tire-type">Type</label></h6>
-											<input id="tire-type" name="tire-type" list="tire-types" class="form-control" type="text">
-											<datalist id="tire-types">
-												<option value="Conventionnels">
-												<option value="Conventionnels à flancs blancs">
-												<option value="Haute-performance à taille basse">
-												<option value="Compétition">
-											</datalist>
+											<select id="tire-type" name="tire-type" class="form-control">
+												<option value="Conventionnels">Conventionnels</option>
+												<option value="Conventionnels à flancs blancs">Conventionnels à flancs blancs</option>
+												<option value="Haute-performance à taille basse">Haute-performance à taille basse</option>
+												<option value="Compétition">Compétition</option>
+											</select>
 										</div>
 									</div>
 									<!-- Dimension avant (en pouces) -->
@@ -1212,8 +1179,6 @@
 										<div class="col">
 											<h6><label for="dashboard-state">Tableau de bord</label></h6>
 											<input id="dashboard-state" name="dashboard-state" type="range" class="custom-range" step="10" min="0" max="100">
-										</div>
-										<div class="col-auto">
 											<br>
 											<div class="input-group">
 												<div class="custom-control custom-radio custom-control-inline">
@@ -1236,8 +1201,6 @@
 										<div class="col">
 											<h6><label for="console-state">Console</label></h6>
 											<input id="console-state" name="console-state" type="range" class="custom-range" step="10" min="0" max="100">
-										</div>
-										<div class="col-auto">
 											<br>
 											<div class="input-group">
 												<div class="custom-control custom-radio custom-control-inline">
@@ -1260,8 +1223,6 @@
 										<div class="col">
 											<h6><label for="instrumentation-state">Instrumentation</label></h6>
 											<input id="instrumentation-state" name="instrumentation-state" type="range" class="custom-range" step="10" min="0" max="100">
-										</div>
-										<div class="col-auto">
 											<br>
 											<div class="input-group">
 												<div class="custom-control custom-radio custom-control-inline">
@@ -1284,8 +1245,6 @@
 										<div class="col">
 											<h6><label for="driver-sit-state">Siège conducteur</label></h6>
 											<input id="driver-sit-state" name="driver-sit-state" type="range" class="custom-range" step="10" min="0" max="100">
-										</div>
-										<div class="col-auto">
 											<br>
 											<div class="input-group">
 												<div class="custom-control custom-radio custom-control-inline">
@@ -1308,8 +1267,6 @@
 										<div class="col">
 											<h6><label for="passenger-sit-state">Siège passager</label></h6>
 											<input id="passenger-sit-state" name="passenger-sit-state" type="range" class="custom-range" step="10" min="0" max="100">
-										</div>
-										<div class="col-auto">
 											<br>
 											<div class="input-group">
 												<div class="custom-control custom-radio custom-control-inline">
@@ -1332,8 +1289,6 @@
 										<div class="col">
 											<h6><label for="back-sits-state">Sièges arrière</label></h6>
 											<input id="back-sits-state" name="back-sits-state" type="range" class="custom-range" step="10" min="0" max="100">
-										</div>
-										<div class="col-auto">
 											<br>
 											<div class="input-group">
 												<div class="custom-control custom-radio custom-control-inline">
@@ -1356,8 +1311,6 @@
 										<div class="col">
 											<h6><label for="interior-lining-state">Garniture intérieure</label></h6>
 											<input id="interior-lining-state" name="interior-lining-state" type="range" class="custom-range" step="10" min="0" max="100">
-										</div>
-										<div class="col-auto">
 											<br>
 											<div class="input-group">
 												<div class="custom-control custom-radio custom-control-inline">
@@ -1380,8 +1333,6 @@
 										<div class="col">
 											<h6><label for="overhead-lining-state">Garniture du pavillon</label></h6>
 											<input id="overhead-lining-state" name="overhead-lining-state" type="range" class="custom-range" step="10" min="0" max="100">
-										</div>
-										<div class="col-auto">
 											<br>
 											<div class="input-group">
 												<div class="custom-control custom-radio custom-control-inline">
@@ -1404,8 +1355,6 @@
 										<div class="col">
 											<h6><label for="carpet-state">Tapis</label></h6>
 											<input id="carpet-state" name="carpet-state" type="range" class="custom-range" step="10" min="0" max="100">
-										</div>
-										<div class="col-auto">
 											<br>
 											<div class="input-group">
 												<div class="custom-control custom-radio custom-control-inline">
@@ -1428,8 +1377,6 @@
 										<div class="col">
 											<h6><label for="right-door-lining-state">Panneaux de garnissage - portière droite</label></h6>
 											<input id="right-door-lining-state" name="right-door-lining-state" type="range" class="custom-range" step="10" min="0" max="100">
-										</div>
-										<div class="col-auto">
 											<br>
 											<div class="input-group">
 												<div class="custom-control custom-radio custom-control-inline">
@@ -1452,8 +1399,6 @@
 										<div class="col">
 											<h6><label for="left-door-lining-state">Panneaux de garnissage - portière gauche</label></h6>
 											<input id="left-door-lining-state" name="left-door-lining-state" type="range" class="custom-range" step="10" min="0" max="100">
-										</div>
-										<div class="col-auto">
 											<br>
 											<div class="input-group">
 												<div class="custom-control custom-radio custom-control-inline">
@@ -1476,8 +1421,6 @@
 										<div class="col">
 											<h6><label for="door-seals-state">Joints d'étanchéité des portières</label></h6>
 											<input id="door-seals-state" name="door-seals-state" type="range" class="custom-range" step="10" min="0" max="100">
-										</div>
-										<div class="col-auto">
 											<br>
 											<div class="input-group">
 												<div class="custom-control custom-radio custom-control-inline">
@@ -1501,7 +1444,7 @@
 
 						<div class="col-sm-auto">
 							<!-- Card Garniture -->
-							<div class="card bg-light mt-3 mb-5" style="min-width: 300px">
+							<div class="card bg-light mt-3 mb-5">
 								<h5 class="card-header">Garniture</h5>
 								<div class="card-body">
 									<!-- Garniture -->
@@ -1538,10 +1481,10 @@
 					</div>
 
 					<!-- Onglet Options -->
-					<div class="swiper-slide tab-section d-flex flex-wrap align-items-stretch justify-content-center px-3 pb-5" name="examen">
+					<div class="swiper-slide tab-section d-flex flex-wrap align-items-stretch justify-content-center px-3 pb-5">
 						<div class="col-auto">
 							<!-- Card options extérieures -->
-							<div class="card bg-light mt-3 mb-5" style="min-width: 300px">
+							<div class="card bg-light mt-3 mb-5">
 								<h5 class="card-header">Options extérieures</h5>
 								<div class="card-body">
 									<div class="row">
@@ -1587,7 +1530,7 @@
 						</div>
 						<div class="col-auto">
 							<!-- Card Options intérieures-->
-							<div class="card bg-light mt-3 mb-5" style="min-width: 300px">
+							<div class="card bg-light mt-3 mb-5">
 								<h5 class="card-header">Options Intérieures</h5>
 								<div class="card-body">
 									<div class="row">
@@ -1643,25 +1586,25 @@
 						</div>
 						<div class="col-auto">
 							<!-- Card Options de sécurité -->
-							<div class="card bg-light mt-3 mb-5" style="min-width: 300px">
+							<div class="card bg-light mt-3 mb-5">
 								<h5 class="card-header">Options de sécurité</h5>
 								<div class="card-body">
 									<div class="row">
 										<div class="col">
 											<div class="form-group">
 												<div class="custom-control custom-checkbox">
-													<input id="options-safety-1" name="options-safety-1" value="Système ABS" type="checkbox" class="custom-control-input">
-													<label for="options-safety-1" class="custom-control-label">Système ABS</label>
+													<input id="options-safety-1" name="options-safety-1" value="Écrous de roues anti-vol" type="checkbox" class="custom-control-input">
+													<label for="options-safety-1" class="custom-control-label">Écrous de roues anti-vol</label>
 												</div>
 												<hr>
 												<div class="custom-control custom-checkbox">
-													<input id="options-safety-2" name="options-safety-2" value="Régulateur de vitesse" type="checkbox" class="custom-control-input">
-													<label for="options-safety-2" class="custom-control-label">Régulateur de vitesse</label>
+													<input id="options-safety-2" name="options-safety-2" value="Canne anti-vol" type="checkbox" class="custom-control-input">
+													<label for="options-safety-2" class="custom-control-label">Canne anti-vol</label>
 												</div>
 												<hr>
 												<div class="custom-control custom-checkbox">
-													<input id="options-safety-3" name="options-safety-3" value="Direction assistée" type="checkbox" class="custom-control-input">
-													<label for="options-safety-3" class="custom-control-label">Direction assistée</label>
+													<input id="options-safety-3" name="options-safety-3" value="Tracker" type="checkbox" class="custom-control-input">
+													<label for="options-safety-3" class="custom-control-label">Tracker</label>
 												</div>
 												<hr>
 												<div class="custom-control custom-checkbox">
@@ -1689,23 +1632,8 @@
 													<label for="options-safety-8" class="custom-control-label">Alarme coupe circuit</label>
 												</div>
 												<hr>
-												<div class="custom-control custom-checkbox">
-													<input id="options-safety-9" name="options-safety-9" value="Écrous de roues anti-vol" type="checkbox" class="custom-control-input">
-													<label for="options-safety-9" class="custom-control-label">Écrous de roues anti-vol</label>
-												</div>
-												<hr>
-												<div class="custom-control custom-checkbox">
-													<input id="options-safety-10" name="options-safety-10" value="Canne anti-vol" type="checkbox" class="custom-control-input">
-													<label for="options-safety-10" class="custom-control-label">Canne anti-vol</label>
-												</div>
-												<hr>
-												<div class="custom-control custom-checkbox">
-													<input id="options-safety-11" name="options-safety-11" value="Tracker" type="checkbox" class="custom-control-input">
-													<label for="options-safety-11" class="custom-control-label">Tracker</label>
-												</div>
-												<hr>
-												<label for="options-safety-12">Autre(s)</label>
-												<input id="options-safety-12" name="options-safety-12" placeholder="(séparées par des virgules)" class="form-control" type="text">
+												<label for="options-safety-9">Autre(s)</label>
+												<input id="options-safety-9" name="options-safety-9" placeholder="(séparées par des virgules)" class="form-control" type="text">
 											</div>
 										</div>
 									</div>
@@ -1718,7 +1646,7 @@
 					<div class="swiper-slide tab-section d-flex flex-wrap align-items-start justify-content-center px-3 pb-5" name="mecanique">
 						<div class="col-auto">
 							<!-- Card Moteur -->
-							<div class="card bg-light mt-3 mb-5" style="min-width: 300px">
+							<div class="card bg-light mt-3 mb-5">
 								<h5 class="card-header">Moteur</h5>
 								<div class="card-body">
 									<!-- Marque -->
@@ -1805,7 +1733,7 @@
 						</div>
 						<div class="col-auto">
 							<!-- Boîte de vitesse -->
-							<div class="card bg-light mt-3 mb-5" style="min-width: 300px">
+							<div class="card bg-light mt-3 mb-5">
 								<h5 class="card-header">Boîte de vitesse</h5>
 								<div class="card-body">
 									<!-- Rapports de vitesse -->
@@ -1882,7 +1810,7 @@
 						</div>
 						<div class="col-auto">
 							<!-- Autres éléments -->
-							<div class="card bg-light mt-3 mb-5" style="min-width: 300px">
+							<div class="card bg-light mt-3 mb-5">
 								<h5 class="card-header">Autres éléments</h5>
 								<div class="card-body">
 									<!-- Système de freinage -->
@@ -1972,7 +1900,7 @@
 					</div>
 
 					<!-- Onglet Synthèse -->
-					<div class="swiper-slide tab-section d-flex flex-wrap align-items-center justify-content-center px-3 pb-5" name="examen">
+					<div class="swiper-slide tab-section d-flex flex-wrap align-items-start justify-content-center px-3 pb-5">
 						<div class="col-md-8">
 							<!-- Card Photographies -->
 							<div class="card bg-light mt-3 mb-5">

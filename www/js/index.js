@@ -143,10 +143,10 @@ var app = {
 		app.updateFormData();
 		app.updateAttachments();
 		var args = {
-			to: 'cguenant@alcyon-media.com',
+			to: 'charles.guenant@gmail.com',
 			cc: app.profile.email,
 			bcc: '',
-			subject: 'Expertise par' + app.profile.prenom + ' ' + app.profile.nom,
+			subject: 'Expertise de ' + app.formData['vehicle-make'] + ' ' + app.formData['vehicle-model'] + ' par ' + app.profile.prenom + ' ' + app.profile.nom,
 			body: app.dataToText(),
 			attachments: app.attachments,
 		}
@@ -320,10 +320,7 @@ var app = {
 			app.formData['options-safety-6'],
 			app.formData['options-safety-7'],
 			app.formData['options-safety-8'],
-			app.formData['options-safety-9'],
-			app.formData['options-safety-10'],
-			app.formData['options-safety-11'],
-			app.formData['options-safety-12']
+			app.formData['options-safety-9']
 		);
 		plainText += '\n Sécurité :\n ' + optionSafety.filter(Boolean).join(', ');
 
