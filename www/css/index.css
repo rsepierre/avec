@@ -1,0 +1,57 @@
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0.3); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+
+body {
+    -webkit-touch-callout: none;				/* prevent callout to copy image, etc when tap to hold */
+    text-size-adjust: none;						/* prevent webkit from resizing text to fit */
+	user-select: none;							/* prevent copy paste, to allow, change 'none' to 'text' */
+	overscroll-behavior: contain;				/* prevents refresh on overscroll */
+    font-family: system-ui, -apple-system, -apple-system-font, 'Segoe UI', 'Roboto', sans-serif;
+    font-size:16px;
+    margin:0px;
+	padding:0px;
+	background-color: black;
+	color: white;
+}
+
+#app {
+	height: 100vh;
+	width: 100%;
+}
+
+#app-navigation .swiper-slide {
+	width: auto;
+	padding: 15px 25px;
+}
+
+#app-form {
+	height: calc(100% - 148px);
+}
+
+button img {
+	height: 28px;
+	width: auto;
+}
+
+#app-navigation button {
+	flex: 0 1 auto;
+	padding: 8px 18px;
+}
+
+.tab-section {
+	overflow-y: auto;
+}
+
+/* Input Range Ticks */
+.tick {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	width: 1px;
+	background: rgba(0,0,0,0.5);
+	height: 7px;
+    line-height: 40px;
+    margin-top: -3px;
+    margin-bottom: 20px;
+}

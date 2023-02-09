@@ -1,0 +1,2113 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>AVEC</title>
+		<!-- Required -->
+		<meta charset="utf-8">
+		<meta id="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+		<!-- Cordova -->
+		<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+		<meta id="format-detection" content="telephone=no">
+		<meta id="msapplication-tap-highlight" content="no">
+		<!-- Bootstrap -->
+		<script src="lib/jquery-3.4.1.min.js"></script>
+		<script src="lib/popper.min.js"></script>
+		<link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+		<script src="lib/bootstrap/js/bootstrap.min.js"></script>
+		<!-- Swiper -->
+		<link rel="stylesheet" href="lib/swiper/css/swiper.min.css">
+		<script src="lib/swiper/js/swiper.min.js"></script>
+		<!-- Prevent iOs slow click -->
+		<script src="lib/fastclick.js"></script>
+		<!-- Custom -->
+		<link rel="stylesheet" type="text/css" href="css/index.css">
+	</head>
+
+	<body>
+		<div id="app">
+			<!-- Navigation Bar -->
+			<div id="app-navigation" class="swiper-container py-4">
+				<div class="swiper-wrapper btn-group" role="group" aria-label="label">
+					<button class="tab-nav btn btn-dark" name="expert">Expert</button>
+					<button class="tab-nav btn btn-dark" name="expert">Client</button>
+					<button class="tab-nav btn btn-dark" name="examen">Examen</button>
+					<button class="tab-nav btn btn-dark" name="vehicule">Véhicule</button>
+					<button class="tab-nav btn btn-dark" name="exterieur">Extérieur</button>
+					<button class="tab-nav btn btn-dark" name="interieur">Intérieur</button>
+					<button class="tab-nav btn btn-dark" name="equipement">Options</button>
+					<button class="tab-nav btn btn-dark" name="mecanique">Mécanique</button>
+					<button class="tab-nav btn btn-dark" name="synthese">Synthèse</button>
+				</div>
+			</div>
+
+			<!-- Form -->
+			<form id="app-form" class="swiper-container text-body">
+				<div class="swiper-wrapper">
+
+					<!-- Onglet Expert -->
+					<div class="swiper-slide tab-section d-flex flex-wrap align-items-center justify-content-around px-3 pb-5">
+						<div class="col-md-8">
+							<div class="card bg-light mt-3 mb-5">
+								<h5 id="expert" class="card-header">Expert</h5>
+								<div class="card-body">
+									<!-- Sélection du profil -->
+									<div class="row pb-3">
+										<div class="col">
+											<h6><label for="expert-profile">Profil</label></h6>
+											<div class="input-group">
+												<div class="input-group-prepend">
+													<div class="input-group-text">
+														<img src="lib/bootstrap-icons/icons/person.svg">
+													</div>
+												</div>
+												<select id="expert-profile" name="expert-profile" class="form-control">
+												</select>
+											</div>
+										</div>
+									</div>
+									<hr>
+									<!-- E-mail (inéditable) -->
+									<div class="row pb-3">
+										<div class="col">
+											<h6><label for="expert-email">E-mail</label></h6>
+											<div class="input-group">
+												<div class="input-group-prepend">
+													<div class="input-group-text">@</div>
+												</div>
+												<input id="expert-email" name="expert-email" class="form-control" type="email" readonly>
+											</div>
+										</div>
+									</div>
+									<!-- Téléphone (inéditable) -->
+									<div class="row pb-3">
+										<div class="col">
+											<h6><label for="expert-tel">Téléphone</label></h6>
+											<div class="input-group">
+												<div class="input-group-prepend">
+													<div class="input-group-text"><img src="lib/bootstrap-icons/icons/phone.svg"></div>
+												</div>
+												<input id="expert-tel" name="expert-tel" class="form-control" type="tel" readonly>
+											</div>
+										</div>
+									</div>
+									<!-- Adresse -->
+									<div class="row pb-3">
+										<div class="col">
+											<h6><label for="expert-address">Adresse</label></h6>
+											<div class="input-group">
+												<div class="input-group-prepend">
+													<div class="input-group-text"><img src="lib/bootstrap-icons/icons/house.svg"></div>
+												</div>
+												<input id="expert-address" name="expert-address" class="form-control" type="text" readonly>
+											</div>
+										</div>
+									</div>
+									<!-- Ville (inéditable) -->
+									<div class="row pb-3">
+										<div class="col-8">
+											<h6><label for="expert-city">Ville</label></h6>
+											<div class="input-group">
+												<div class="input-group-prepend">
+													<div class="input-group-text"><img src="lib/bootstrap-icons/icons/building.svg"></div>
+												</div>
+												<input id="expert-city" name="expert-city" class="form-control" type="text" readonly>
+											</div>
+										</div>
+										<div class="col">
+											<h6><label for="expert-zip">Code Postal</label></h6>
+											<div class="input-group">
+												<div class="input-group-prepend">
+													<div class="input-group-text"><img src="lib/bootstrap-icons/icons/map.svg"></div>
+												</div>
+												<input id="expert-zip" name="expert-zip" class="form-control" type="text" readonly>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Onglet Client -->
+					<div class="swiper-slide tab-section d-flex flex-wrap align-items-center justify-content-around px-3 pb-5">
+						<div class="col-md-8">
+							<div class="card bg-light mt-3 mb-5">
+								<h5 class="card-header">Fiche client</h5>
+								<div class="card-body">
+									<!-- État Civil -->
+									<div class="row pb-3">
+										<div class="col-auto">
+											<h6><label for="client-gender">Identité</label></h6>
+											<div class="input-group">
+												<div class="input-group-prepend">
+													<div class="input-group-text">
+														<img src="lib/bootstrap-icons/icons/person.svg" title="user">
+													</div>
+												</div>
+												<select id="client-gender" name="client-gender" class="form-control">
+													<option>M.</option>
+													<option>Mme</option>
+													<option>Mlle</option>
+												</select>
+											</div>
+										</div>
+										<div class="col">
+											<h6><label for="client-firstname">Prénom</label></h6>
+											<input id="client-firstname" name="client-firstname" class="form-control" type="text">
+										</div>
+										<div class="col">
+											<h6><label for="client-lastname">Nom</label></h6>
+											<input id="client-lastname" name="client-lastname" class="form-control" type="text">
+										</div>
+									</div>
+									<hr>
+									<!-- E-mail -->
+									<div class="row pb-3">
+										<div class="col">
+											<h6><label for="client-email">E-mail</label></h6>
+											<div class="input-group">
+												<div class="input-group-prepend">
+													<div class="input-group-text">@</div>
+												</div>
+												<input id="client-email" name="client-email" class="form-control" type="email">
+											</div>
+										</div>
+									</div>
+									<!-- Téléphone -->
+									<div class="row pb-3">
+										<div class="col">
+											<h6><label for="client-tel">Téléphone</label></h6>
+											<div class="input-group">
+												<div class="input-group-prepend">
+													<div class="input-group-text"><img src="lib/bootstrap-icons/icons/phone.svg"></div>
+												</div>
+												<input id="client-tel" name="client-tel" class="form-control" type="tel">
+											</div>
+										</div>
+									</div>
+									<!-- Adresse -->
+									<div class="row pb-3">
+										<div class="col">
+											<!-- Adresse -->
+											<h6><label for="client-address">Adresse</label></h6>
+											<div class="input-group">
+												<div class="input-group-prepend">
+													<div class="input-group-text"><img src="lib/bootstrap-icons/icons/house.svg"></div>
+												</div>
+												<input id="client-address" name="client-address" class="form-control" type="text">
+											</div>
+										</div>
+									</div>
+									<!-- Ville -->
+									<div class="row pb-3">
+										<div class="col-8">
+											<h6><label for="client-city">Ville</label></h6>
+											<div class="input-group">
+												<div class="input-group-prepend">
+													<div class="input-group-text"><img src="lib/bootstrap-icons/icons/building.svg"></div>
+												</div>
+												<input id="client-city" name="client-city" class="form-control" type="text">
+											</div>
+										</div>
+										<div class="col">
+											<h6><label for="client-zip">Code Postal</label></h6>
+											<div class="input-group">
+												<div class="input-group-prepend">
+													<div class="input-group-text"><img src="lib/bootstrap-icons/icons/map.svg"></div>
+												</div>
+												<input id="client-zip" name="client-zip" class="form-control" type="number">
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Onglet Examen -->
+					<div class="swiper-slide tab-section d-flex flex-wrap align-items-center justify-content-around px-3 pb-5" name="examen">
+						<!-- Card Examen -->
+						<div class="col-md-8">
+							<div class="card bg-light mt-3 mb-5">
+								<h5 class="card-header">Examen</h5>
+								<div class="card-body">
+									<!-- Mode d'inspection -->
+									<div class="row pb-3">
+										<div class="col">
+											<h6>Inspection</h6>
+											<hr>
+											<div class="custom-control custom-radio">
+												<input id="inspection-method-1" name="inspection-method" value="1" class="custom-control-input" type="radio">
+												<label for="inspection-method-1" class="custom-control-label">Réalisée au sol</label>
+											</div>
+											<hr>
+											<div class="custom-control custom-radio">
+												<input id="inspection-method-2" name="inspection-method" value="2" class="custom-control-input" type="radio">
+												<label for="inspection-method-2" class="custom-control-label">Réalisée avec pont élévateur 2 colonnes</label>
+											</div>
+											<hr>
+											<div class="custom-control custom-radio">
+												<input id="inspection-method-3" name="inspection-method" value="3" class="custom-control-input" type="radio">
+												<label for="inspection-method-3" class="custom-control-label">Réalisée avec pont élévateur 4 colonnes</label>
+											</div>
+											<hr>
+											<div class="custom-control custom-radio">
+												<input id="inspection-method-4" name="inspection-method" class="custom-control-input" type="radio">
+												<label for="inspection-method-4" class="custom-control-label">Réalisé sur fosse</label>
+											</div>
+											<hr>
+										</div>
+									</div>
+									<!-- Date -->
+									<div class="row pb-3">
+										<div class="col">
+											<h6><label for="inspection-date">Date de l'expertise</label></h6>
+											<input id="inspection-date" name="inspection-date" class="form-control" type="date">
+										</div>
+									</div>
+									<!-- Lieu -->
+									<div class="row pb-3">
+										<div class="col">
+											<h6><label for="inspection-address">Lieu de l'expertise</label></h6>
+											<div class="input-group">
+												<div class="input-group-prepend">
+													<div class="input-group-text">
+														<div class="custom-control custom-checkbox">
+															<input id="inspection-onroad" name="inspection-onroad" class="custom-control-input" type="checkbox">
+															<label for="inspection-onroad" class="custom-control-label">Essai sur route ?</label>
+														</div>
+													</div>
+												</div>
+												<input id="inspection-address" name="inspection-address" class="form-control" type="text">
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Onglet Véhicule -->
+					<div class="swiper-slide tab-section d-flex flex-wrap align-items-start justify-content-center px-3 pb-5">
+						<div class="col-md-6">
+							<!-- Card Fiche Véhicule -->
+							<div class="card bg-light mt-3 mb-5">
+								<h5 class="card-header">Fiche Véhicule</h5>
+								<div class="card-body">
+									<!-- Marque -->
+									<div class="row pb-3">
+										<div class="col">
+											<h6><label for="vehicle-make">Marque</label></h6>
+											<input id="vehicle-make" name="vehicle-make" list="vehicle-makes" class="form-control" type="text">
+											<datalist id="vehicle-makes">
+												<option value="Abarth">
+												<option value="AC">
+												<option value="Acura">
+												<option value="Alfa Romeo">
+												<option value="Alpina">
+												<option value="AMC">
+												<option value="ASR">
+												<option value="Aston Martin">
+												<option value="Audi">
+												<option value="Bentley">
+												<option value="BMW">
+												<option value="Brilliance">
+												<option value="Bugatti">
+												<option value="Buick">
+												<option value="Cadillac">
+												<option value="Chery">
+												<option value="Chevrolet">
+												<option value="Chrysler">
+												<option value="Citroën">
+												<option value="Cizeta">
+												<option value="Corvette">
+												<option value="Covini">
+												<option value="Dacia">
+												<option value="Daewoo">
+												<option value="Daihatsu">
+												<option value="Datsun">
+												<option value="DKW">
+												<option value="Dodge">
+												<option value="Eagle">
+												<option value="Farbio">
+												<option value="Ferrari">
+												<option value="Fiat">
+												<option value="Fisker">
+												<option value="Ford">
+												<option value="Geely">
+												<option value="Geo">
+												<option value="GMC">
+												<option value="Great Wall">
+												<option value="Holden">
+												<option value="Honda">
+												<option value="Horch">
+												<option value="Hummer">
+												<option value="Hyundai">
+												<option value="Infiniti">
+												<option value="Isuzu">
+												<option value="Jaguar">
+												<option value="Jeep">
+												<option value="Kia">
+												<option value="Koenigsegg">
+												<option value="Lada">
+												<option value="Lamborghini">
+												<option value="Lancia">
+												<option value="Land Rover">
+												<option value="Leblanc">
+												<option value="Lexus">
+												<option value="Lincoln">
+												<option value="Lotus">
+												<option value="McLaren">
+												<option value="Mahindra">
+												<option value="Maruti">
+												<option value="Maserati">
+												<option value="Maybach">
+												<option value="Mazda">
+												<option value="Mercedes-Benz">
+												<option value="MG">
+												<option value="MINI">
+												<option value="Mitsubishi">
+												<option value="Morgan">
+												<option value="Moskvich">
+												<option value="Nanjing">
+												<option value="Naza">
+												<option value="Nissan">
+												<option value="Noble">
+												<option value="Oldsmobile">
+												<option value="Opel">
+												<option value="Pagani">
+												<option value="Panoz">
+												<option value="Peugeot">
+												<option value="Piaggio">
+												<option value="Plymouth">
+												<option value="Pontiac">
+												<option value="Porsche">
+												<option value="Perodua">
+												<option value="Proton">
+												<option value="Rapp Moternwerke">
+												<option value="Renault">
+												<option value="Roewe">
+												<option value="Rolls-Royce">
+												<option value="Rover">
+												<option value="Rossion">
+												<option value="Saab">
+												<option value="Saturn">
+												<option value="Scion">
+												<option value="SEAT">
+												<option value="Skoda">
+												<option value="Smart">
+												<option value="Spyker">
+												<option value="SsangYong">
+												<option value="Stealth">
+												<option value="Suzuki">
+												<option value="Tata">
+												<option value="Tesla">
+												<option value="Toyota">
+												<option value="Toniq">
+												<option value="Trabant">
+												<option value="Vauxhall">
+												<option value="Vector">
+												<option value="Venturi">
+												<option value="Volkswagen">
+												<option value="Volvo">
+												<option value="Wanderer">
+												<option value="Wartburg">
+												<option value="Westfield">
+												<option value="Zastava">
+											</datalist>
+										</div>
+									</div>
+									<!-- Modèle -->
+									<div class="row pb-3">
+										<div class="col">
+											<h6><label for="vehicle-model">Modèle</label></h6>
+											<input id="vehicle-model" name="vehicle-model" class="form-control" type="text">
+										</div>
+									</div>
+									<!-- Année -->
+									<div class="row pb-3">
+										<div class="col">
+											<h6><label for="vehicle-year">Année</label></h6>
+											<input id="vehicle-year" name="vehicle-year" class="form-control" type="number">
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- Card Identification -->
+							<div class="card bg-light mt-3 mb-5">
+								<h5 class="card-header">Identification</h5>
+								<div class="card-body">
+									<!-- N° de Série -->
+									<div class="row pb-3">
+										<div class="col">
+											<h6><label for="vehicle-serial">N° de série</label></h6>
+											<input id="vehicle-serial" name="vehicle-serial" class="form-control" type="text">
+										</div>
+									</div>
+									<!-- Immatriculation -->
+									<div class="row pb-3">
+										<div class="col">
+											<h6><label for="vehicle-registration">Immatriculation</label></h6>
+											<input id="vehicle-registration" name="vehicle-registration" class="form-control" type="text">
+										</div>
+									</div>
+									<!-- Plaque constructeur -->
+									<div class="row pb-3">
+										<div class="col">
+											<h6><label for="vehicle-plate">Plaque constructeur</label></h6>
+											<div class="input-group">
+												<div class="input-group-prepend">
+													<div class="input-group-text">
+														<div class="custom-control custom-checkbox">
+															<input id="vehicle-plate-coldstamped" name="vehicle-plate-coldstamped" class="custom-control-input" type="checkbox">
+															<label for="vehicle-plate-coldstamped" class="custom-control-label">Frappe à froid</label>
+														</div>
+													</div>
+												</div>
+												<input id="vehicle-plate" name="vehicle-plate" class="form-control" type="text">
+											</div>
+										</div>
+									</div>
+									<!-- Mise en circulation -->
+									<div class="row pb-3">
+										<div class="col">
+											<h6><label for="vehicle-release">Mise en circulation</label></h6>
+											<input id="vehicle-release" name="vehicle-release" class="form-control" type="date">
+										</div>
+									</div>
+									<!-- Carte grise -->
+									<div class="row pb-3">
+										<div class="col">
+											<h6><label for="vehicle-graycardissue">Émission de la Carte grise</label></h6>
+											<input id="vehicle-graycardissue" name="vehicle-graycardissue" class="form-control" type="date">
+										</div>
+									</div>
+									<!-- Contrôle Technique -->
+									<div class="row pb-3">
+										<div class="col">
+											<h6><label for="vehicle-roadworthy">Dernier contrôle technique</label></h6>
+											<input id="vehicle-roadworthy" name="vehicle-roadworthy" class="form-control" type="date">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<!-- Card Catégorisation -->
+							<div class="card bg-light mt-3 mb-5">
+								<h5 class="card-header">Catégorisation</h5>
+								<div class="card-body">
+									<!-- Carrosserie -->
+									<div class="row pb-3">
+										<div class="col">
+											<h6><label for="vehicle-body">Type de carrosserie</label></h6>
+											<input id="vehicle-body" name="vehicle-body" list="vehicle-bodies" class="form-control" type="text">
+											<datalist id="vehicle-bodies">
+												<option value="Barquette">
+												<option value="Berline">
+												<option value="Berlinette">
+												<option value="Cabriolet">
+												<option value="Coach">
+												<option value="Coupé">
+												<option value="Limousine">
+												<option value="Monoplace">
+												<option value="Spider">
+											</datalist>
+										</div>
+									</div>
+									<!-- Portes -->
+									<div class="row pb-3">
+										<div class="col">
+											<h6><label for="vehicle-doors">Portes</label></h6>
+											<input id="vehicle-doors" name="vehicle-doors" class="custom-range" type="range" step="1" min="1" max="6">
+											<div class="d-flex justify-content-between px-2">
+												<span class="tick">1</span>
+												<span class="tick">2</span>
+												<span class="tick">3</span>
+												<span class="tick">4</span>
+												<span class="tick">5</span>
+												<span class="tick">(+)</span>
+											</div>
+										</div>
+									</div>
+									<!-- Places -->
+									<div class="row pb-3">
+										<div class="col">
+											<h6><label for="vehicle-sits">Places</label></h6>
+											<input id="vehicle-sits" name="vehicle-sits" type="range" class="custom-range" step="1" min="1" max="6">
+											<div class="d-flex justify-content-between px-2">
+												<span class="tick">1</span>
+												<span class="tick">2</span>
+												<span class="tick">3</span>
+												<span class="tick">4</span>
+												<span class="tick">5</span>
+												<span class="tick">(+)</span>
+											</div>
+										</div>
+									</div>
+									<!-- Chevaux Fiscaux -->
+									<div class="row pb-3">
+										<div class="col">
+											<h6><label for="vehicle-fiscalhp">Chevaux fiscaux</label></h6>
+											<input id="vehicle-fiscalhp" name="vehicle-fiscalhp" class="form-control" type="number">
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- Card Aperçu -->
+							<div class="card bg-light mt-3 mb-5">
+								<h5 class="card-header">Aperçu</h5>
+								<div class="card-body">
+									<!-- État Général -->
+									<div class="row pb-3">
+										<div class="col">
+											<label for="general-overview">État général</label>
+											<input id="general-state" name="general-state" class="custom-range" type="range" step="10" min="0" max="100">
+											<div class="d-flex justify-content-between px-2">
+												<span class="tick"></span>
+												<span class="tick"></span>
+												<span class="tick"></span>
+												<span class="tick"></span>
+												<span class="tick"></span>
+												<span class="tick"></span>
+												<span class="tick"></span>
+												<span class="tick"></span>
+												<span class="tick"></span>
+												<span class="tick"></span>
+												<span class="tick"></span>
+											</div>
+											<hr>
+											<!-- Entretien -->
+											<div class="custom-control custom-radio">
+												<input id="general-conformity-1" name="general-conformity" value="Conforme à la fiche" type="radio" class="custom-control-input">
+												<label for="general-conformity-1" class="custom-control-label">Conforme à la fiche</label>
+											</div>
+											<hr>
+											<div class="custom-control custom-radio">
+												<input id="general-conformity-2" name="general-conformity" value="Non restauré" type="radio" class="custom-control-input">
+												<label for="general-conformity-2" class="custom-control-label">Non restauré</label>
+											</div>
+											<hr>
+											<div class="custom-control custom-radio">
+												<input id="general-conformity-3" name="general-conformity" value="Restauré" type="radio" class="custom-control-input">
+												<label for="general-conformity-3" class="custom-control-label">Restauré</label>
+											</div>
+											<!-- État de fonctionnement -->
+											<hr>
+											<div class="custom-control custom-switch">
+												<input id="general-working" name="general-working" type="checkbox" class="custom-control-input">
+												<label for="general-working" class="custom-control-label">En état de rouler</label>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- Onglet Exterieur -->
+					<div class="swiper-slide tab-section d-flex flex-wrap align-items-start justify-content-around px-3 pb-5">
+						<div class="col-md">
+							<!-- Card État exterieur-->
+							<div class="card bg-light mt-3 mb-5">
+								<h5 class="card-header">État exterieur</h5>
+								<div class="card-body">
+									<!-- Pare-choc avant -->
+									<div class="row pb-3">
+										<div class="col">
+											<h6><label for="front-bumper-state">Pare-choc avant</label></h6>
+											<input id="front-bumper-state" name="front-bumper-state" type="range" class="custom-range" step="10" min="0" max="100">
+										</div>
+										<div class="col-auto">
+											<br>
+											<div class="input-group">
+												<div class="custom-control custom-radio custom-control-inline">
+													<input id="front-bumper-modification-1" value="Modifié" name="front-bumper-modification" class="custom-control-input" type="radio" value="modifié">
+													<label for="front-bumper-modification-1" class="custom-control-label">Modifié</label>
+												</div>
+												<div class="custom-control custom-radio custom-control-inline">
+													<input id="front-bumper-modification-2" value="Modernisé" name="front-bumper-modification" class="custom-control-input" type="radio" value="modernisé">
+													<label for="front-bumper-modification-2" class="custom-control-label">Modernisé</label>
+												</div>
+												<div class="custom-control custom-radio custom-control-inline">
+													<input id="front-bumper-modification-3" value="Conforme à l'origine" name="front-bumper-modification" class="custom-control-input" type="radio" value="conforme">
+													<label for="front-bumper-modification" class="custom-control-label">Conforme</label>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- Pare-choc arrière -->
+									<div class="row pb-3">
+										<div class="col">
+											<h6><label for="rear-bumper-state">Pare-choc arrière</label></h6>
+											<input id="rear-bumper-state" name="rear-bumper-state" type="range" class="custom-range" step="10" min="0" max="100">
+										</div>
+										<div class="col-auto">
+											<br>
+											<div class="input-group">
+												<div class="custom-control custom-radio custom-control-inline">
+													<input id="rear-bumper-modification-1" value="Modifié" name="rear-bumper-modification" class="custom-control-input" type="radio" value="modifié">
+													<label for="rear-bumper-modification-1" class="custom-control-label">Modifié</label>
+												</div>
+												<div class="custom-control custom-radio custom-control-inline">
+													<input id="rear-bumper-modification-2" value="Modernisé" name="rear-bumper-modification" class="custom-control-input" type="radio" value="modernisé">
+													<label for="rear-bumper-modification-2" class="custom-control-label">Modernisé</label>
+												</div>
+												<div class="custom-control custom-radio custom-control-inline">
+													<input id="rear-bumper-modification-3" value="Conforme à l'origine" name="rear-bumper-modification" class="custom-control-input" type="radio" value="conforme">
+													<label for="rear-bumper-modification-3" class="custom-control-label">Conforme</label>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- Calandre -->
+									<div class="row pb-3">
+										<div class="col">
+											<h6><label for="calender-state">Calandre</label></h6>
+											<input id="calender-state" name="calender-state" type="range" class="custom-range" step="10" min="0" max="100">
+										</div>
+										<div class="col-auto">
+											<br>
+											<div class="input-group">
+												<div class="custom-control custom-radio custom-control-inline">
+													<input id="calender-modification-1" value="Modifié" name="calender-modification" class="custom-control-input" type="radio" value="modifié">
+													<label for="calender-modification-1" class="custom-control-label">Modifié</label>
+												</div>
+												<div class="custom-control custom-radio custom-control-inline">
+													<input id="calender-modification-2" value="Modernisé" name="calender-modification" class="custom-control-input" type="radio" value="modernisé">
+													<label for="calender-modification-2" class="custom-control-label">Modernisé</label>
+												</div>
+												<div class="custom-control custom-radio custom-control-inline">
+													<input id="calender-modification-3" value="Conforme à l'origine" name="calender-modification" class="custom-control-input" type="radio" value="conforme">
+													<label for="calender-modification-3" class="custom-control-label">Conforme</label>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- Capot -->
+									<div class="row pb-3">
+										<div class="col">
+											<h6><label for="hood-state">Capot</label></h6>
+											<input id="hood-state" name="hood-state" type="range" class="custom-range" step="10" min="0" max="100">
+										</div>
+										<div class="col-auto">
+											<br>
+											<div class="input-group">
+												<div class="custom-control custom-radio custom-control-inline">
+													<input id="hood-modification-1" value="Modifié" name="hood-modification" class="custom-control-input" type="radio" value="modifié">
+													<label for="hood-modification-1" class="custom-control-label">Modifié</label>
+												</div>
+												<div class="custom-control custom-radio custom-control-inline">
+													<input id="hood-modification-2" value="Modernisé" name="hood-modification" class="custom-control-input" type="radio" value="modernisé">
+													<label for="hood-modification-2" class="custom-control-label">Modernisé</label>
+												</div>
+												<div class="custom-control custom-radio custom-control-inline">
+													<input id="hood-modification-3" value="Conforme à l'origine" name="hood-modification" class="custom-control-input" type="radio" value="conforme">
+													<label for="hood-modification-3" class="custom-control-label">Conforme</label>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- Aile gauche -->
+									<div class="row pb-3">
+										<div class="col">
+											<h6><label for="left-wing-state">Aile gauche</label></h6>
+											<input id="left-wing-state" name="left-wing-state" type="range" class="custom-range" step="10" min="0" max="100">
+										</div>
+										<div class="col-auto">
+											<br>
+											<div class="input-group">
+												<div class="custom-control custom-radio custom-control-inline">
+													<input id="left-wing-modification-1" value="Modifié" name="left-wing-modification" class="custom-control-input" type="radio" value="modifié">
+													<label for="left-wing-modification-1" class="custom-control-label">Modifié</label>
+												</div>
+												<div class="custom-control custom-radio custom-control-inline">
+													<input id="left-wing-modification-2" value="Modernisé" name="left-wing-modification" class="custom-control-input" type="radio" value="modernisé">
+													<label for="left-wing-modification-2" class="custom-control-label">Modernisé</label>
+												</div>
+												<div class="custom-control custom-radio custom-control-inline">
+													<input id="left-wing-modification-3" value="Conforme à l'origine" name="left-wing-modification" class="custom-control-input" type="radio" value="conforme">
+													<label for="left-wing-modification-3" class="custom-control-label">Conforme</label>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- Aile droite -->
+									<div class="row pb-3">
+										<div class="col">
+											<h6><label for="right-wing-state">Aile droite</label></h6>
+											<input id="right-wing-state" name="right-wing-state" type="range" class="custom-range" step="10" min="0" max="100">
+										</div>
+										<div class="col-auto">
+											<br>
+											<div class="input-group">
+												<div class="custom-control custom-radio custom-control-inline">
+													<input id="right-wing-modification-1" value="Modifié" name="right-wing-modification" class="custom-control-input" type="radio" value="modifié">
+													<label for="right-wing-modification-1" class="custom-control-label">Modifié</label>
+												</div>
+												<div class="custom-control custom-radio custom-control-inline">
+													<input id="right-wing-modification-2" value="Modernisé" name="right-wing-modification" class="custom-control-input" type="radio" value="modernisé">
+													<label for="right-wing-modification-2" class="custom-control-label">Modernisé</label>
+												</div>
+												<div class="custom-control custom-radio custom-control-inline">
+													<input id="right-wing-modification-3" value="Conforme à l'origine" name="right-wing-modification" class="custom-control-input" type="radio" value="conforme">
+													<label for="right-wing-modification-3" class="custom-control-label">Conforme</label>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- Pare-brise -->
+									<div class="row pb-3">
+										<div class="col">
+											<h6><label for="windshield-state">Pare-brise</label></h6>
+											<input id="windshield-state" name="windshield-state" type="range" class="custom-range" step="10" min="0" max="100">
+										</div>
+										<div class="col-auto">
+											<br>
+											<div class="input-group">
+												<div class="custom-control custom-radio custom-control-inline">
+													<input id="windshield-modification-1" value="Modifié" name="windshield-modification" class="custom-control-input" type="radio" value="modifié">
+													<label for="windshield-modification-1" class="custom-control-label">Modifié</label>
+												</div>
+												<div class="custom-control custom-radio custom-control-inline">
+													<input id="windshield-modification-2" value="Modernisé" name="windshield-modification" class="custom-control-input" type="radio" value="modernisé">
+													<label for="windshield-modification-2" class="custom-control-label">Modernisé</label>
+												</div>
+												<div class="custom-control custom-radio custom-control-inline">
+													<input id="windshield-modification-3" value="Conforme à l'origine" name="windshield-modification" class="custom-control-input" type="radio" value="conforme">
+													<label for="windshield-modification-3" class="custom-control-label">Conforme</label>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- Glaces latérales -->
+									<div class="row pb-3">
+										<div class="col">
+											<h6><label for="side-windows-state">Glaces latérales</label></h6>
+											<input id="side-windows-state" name="side-windows-state" type="range" class="custom-range" step="10" min="0" max="100">
+										</div>
+										<div class="col-auto">
+											<br>
+											<div class="input-group">
+												<div class="custom-control custom-radio custom-control-inline">
+													<input id="side-windows-modification-1" value="Modifié" name="side-windows-modification" class="custom-control-input" type="radio" value="modifié">
+													<label for="side-windows-modification-1" class="custom-control-label">Modifié</label>
+												</div>
+												<div class="custom-control custom-radio custom-control-inline">
+													<input id="side-windows-modification-2" value="Modernisé" name="side-windows-modification" class="custom-control-input" type="radio" value="modernisé">
+													<label for="side-windows-modification-2" class="custom-control-label">Modernisé</label>
+												</div>
+												<div class="custom-control custom-radio custom-control-inline">
+													<input id="side-windows-modification-3" value="Conforme à l'origine" name="side-windows-modification" class="custom-control-input" type="radio" value="conforme">
+													<label for="side-windows-modification-3" class="custom-control-label">Conforme</label>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- Pavillon -->
+									<div class="row pb-3">
+										<div class="col">
+											<h6><label for="overhead-state">Pavillon</label></h6>
+											<input id="overhead-state" name="overhead-state" type="range" class="custom-range" step="10" min="0" max="100">
+										</div>
+										<div class="col-auto">
+											<br>
+											<div class="input-group">
+												<div class="custom-control custom-radio custom-control-inline">
+													<input id="overhead-modification-1" value="Modifié" name="overhead-modification" class="custom-control-input" type="radio" value="modifié">
+													<label for="overhead-modification-1" class="custom-control-label">Modifié</label>
+												</div>
+												<div class="custom-control custom-radio custom-control-inline">
+													<input id="overhead-modification-2" value="Modernisé" name="overhead-modification" class="custom-control-input" type="radio" value="modernisé">
+													<label for="overhead-modification-2" class="custom-control-label">Modernisé</label>
+												</div>
+												<div class="custom-control custom-radio custom-control-inline">
+													<input id="overhead-modification-3" value="Conforme à l'origine" name="overhead-modification" class="custom-control-input" type="radio" value="conforme">
+													<label for="overhead-modification-3" class="custom-control-label">Conforme</label>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- Porte avant gauche -->
+									<div class="row pb-3">
+										<div class="col">
+											<h6><label for="left-door-state">Porte avant gauche</label></h6>
+											<input id="left-door-state" name="left-door-state" type="range" class="custom-range" step="10" min="0" max="100">
+										</div>
+										<div class="col-auto">
+											<br>
+											<div class="input-group">
+												<div class="custom-control custom-radio custom-control-inline">
+													<input id="left-door-modification-1" value="Modifié" name="left-door-modification" class="custom-control-input" type="radio" value="modifié">
+													<label for="left-door-modification-1" class="custom-control-label">Modifié</label>
+												</div>
+												<div class="custom-control custom-radio custom-control-inline">
+													<input id="left-door-modification-2" value="Modernisé" name="left-door-modification" class="custom-control-input" type="radio" value="modernisé">
+													<label for="left-door-modification-2" class="custom-control-label">Modernisé</label>
+												</div>
+												<div class="custom-control custom-radio custom-control-inline">
+													<input id="left-door-modification-3" value="Conforme à l'origine" name="left-door-modification" class="custom-control-input" type="radio" value="conforme">
+													<label for="left-door-modification-3" class="custom-control-label">Conforme</label>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- Porte avant droite -->
+									<div class="row pb-3">
+										<div class="col">
+											<h6><label for="right-door-state">Porte avant droite</label></h6>
+											<input id="right-door-state" name="right-door-state" type="range" class="custom-range" step="10" min="0" max="100">
+										</div>
+										<div class="col-auto">
+											<br>
+											<div class="input-group">
+												<div class="custom-control custom-radio custom-control-inline">
+													<input id="right-door-modification-1" value="Modifié" name="right-door-modification" class="custom-control-input" type="radio" value="modifié">
+													<label for="right-door-modification-1" class="custom-control-label">Modifié</label>
+												</div>
+												<div class="custom-control custom-radio custom-control-inline">
+													<input id="right-door-modification-2" value="Modernisé" name="right-door-modification" class="custom-control-input" type="radio" value="modernisé">
+													<label for="right-door-modification-2" class="custom-control-label">Modernisé</label>
+												</div>
+												<div class="custom-control custom-radio custom-control-inline">
+													<input id="right-door-modification-3" value="Conforme à l'origine" name="right-door-modification" class="custom-control-input" type="radio" value="conforme">
+													<label for="right-door-modification-3" class="custom-control-label">Conforme</label>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- Lunette arrière -->
+									<div class="row pb-3">
+										<div class="col">
+											<h6><label for="rear-window-state">Lunette arrière</label></h6>
+											<input id="rear-window-state" name="rear-window-state" type="range" class="custom-range" step="10" min="0" max="100">
+										</div>
+										<div class="col-auto">
+											<br>
+											<div class="input-group">
+												<div class="custom-control custom-radio custom-control-inline">
+													<input id="rear-window-modification-1" value="Modifié" name="rear-window-modification" class="custom-control-input" type="radio" value="modifié">
+													<label for="rear-window-modification-1" class="custom-control-label">Modifié</label>
+												</div>
+												<div class="custom-control custom-radio custom-control-inline">
+													<input id="rear-window-modification-2" value="Modernisé" name="rear-window-modification" class="custom-control-input" type="radio" value="modernisé">
+													<label for="rear-window-modification-2" class="custom-control-label">Modernisé</label>
+												</div>
+												<div class="custom-control custom-radio custom-control-inline">
+													<input id="rear-window-modification-3" value="Conforme à l'origine" name="rear-window-modification" class="custom-control-input" type="radio" value="conforme">
+													<label for="rear-window-modification-3" class="custom-control-label">Conforme</label>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- Couvercle de coffre -->
+									<div class="row pb-3">
+										<div class="col">
+											<h6><label for="trunk-lid-state">Couvercle du coffre</label></h6>
+											<input id="trunk-lid-state" name="trunk-lid-state" type="range" class="custom-range" step="10" min="0" max="100">
+										</div>
+										<div class="col-auto">
+											<br>
+											<div class="input-group">
+												<div class="custom-control custom-radio custom-control-inline">
+													<input id="trunk-lid-modification-1" value="Modifié" name="trunk-lid-modification" class="custom-control-input" type="radio" value="modifié">
+													<label for="trunk-lid-modification-1" class="custom-control-label">Modifié</label>
+												</div>
+												<div class="custom-control custom-radio custom-control-inline">
+													<input id="trunk-lid-modification-2" value="Modernisé" name="trunk-lid-modification" class="custom-control-input" type="radio" value="modernisé">
+													<label for="trunk-lid-modification-2" class="custom-control-label">Modernisé</label>
+												</div>
+												<div class="custom-control custom-radio custom-control-inline">
+													<input id="trunk-lid-modification-3" value="Conforme à l'origine" name="trunk-lid-modification" class="custom-control-input" type="radio" value="conforme">
+													<label for="trunk-lid-modification-3" class="custom-control-label">Conforme</label>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- Plancher de coffre -->
+									<div class="row pb-3">
+										<div class="col">
+											<h6><label for="trunk-floor-state">Plancher de coffre</label></h6>
+											<input id="trunk-floor-state" name="trunk-floor-state" type="range" class="custom-range" step="10" min="0" max="100">
+										</div>
+										<div class="col-auto">
+											<br>
+											<div class="input-group">
+												<div class="custom-control custom-radio custom-control-inline">
+													<input id="trunk-floor-modification-1" value="Modifié" name="trunk-floor-modification" class="custom-control-input" type="radio" value="modifié">
+													<label for="trunk-floor-modification-1" class="custom-control-label">Modifié</label>
+												</div>
+												<div class="custom-control custom-radio custom-control-inline">
+													<input id="trunk-floor-modification-2" value="Modernisé" name="trunk-floor-modification" class="custom-control-input" type="radio" value="modernisé">
+													<label for="trunk-floor-modification-2" class="custom-control-label">Modernisé</label>
+												</div>
+												<div class="custom-control custom-radio custom-control-inline">
+													<input id="trunk-floor-modification-3" value="Conforme à l'origine" name="trunk-floor-modification" class="custom-control-input" type="radio" value="conforme">
+													<label for="trunk-floor-modification-3" class="custom-control-label">Conforme</label>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- Chassis -->
+									<div class="row pb-3">
+										<div class="col">
+											<h6><label for="chassis-state">Chassis</label></h6>
+											<input id="chassis-state" name="chassis-state" type="range" class="custom-range" step="10" min="0" max="100">
+										</div>
+										<div class="col-auto">
+											<br>
+											<div class="input-group">
+												<div class="custom-control custom-radio custom-control-inline">
+													<input id="chassis-modification-1" value="Modifié" name="chassis-modification" class="custom-control-input" type="radio" value="modifié">
+													<label for="chassis-modification-1" class="custom-control-label">Modifié</label>
+												</div>
+												<div class="custom-control custom-radio custom-control-inline">
+													<input id="chassis-modification-2" value="Modernisé" name="chassis-modification" class="custom-control-input" type="radio" value="modernisé">
+													<label for="chassis-modification-2" class="custom-control-label">Modernisé</label>
+												</div>
+												<div class="custom-control custom-radio custom-control-inline">
+													<input id="chassis-modification-3" value="Conforme à l'origine" name="chassis-modification" class="custom-control-input" type="radio" value="conforme">
+													<label for="chassis-modification-3" class="custom-control-label">Conforme</label>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-sm-auto">
+							<!-- Card Peinture -->
+							<div class="card bg-light mt-3 mb-5" style="min-width: 300px">
+								<h5 class="card-header">Peinture</h5>
+								<div class="card-body">
+									<!-- Couleur -->
+									<div class="row pb-3">
+										<div class="col">
+											<h6><label for="paint-color">Couleur</label></h6>
+											<input id="paint-color" name="paint-color" class="form-control" type="text">
+										</div>
+									</div>
+									<!-- Peinture -->
+									<div class="row pb-3">
+										<div class="col">
+											<h6>Finition</h6>
+											<hr>
+											<div class="custom-control custom-radio">
+												<input id="paint-finish-1" name="paint-finish" value="Brillante" class="custom-control-input" type="radio">
+												<label for="paint-finish-1" class="custom-control-label">Brillante</label>
+											</div>
+											<hr>
+											<div class="custom-control custom-radio">
+												<input id="paint-finish-2" name="paint-finish" value="Mate" class="custom-control-input" type="radio">
+												<label for="paint-finish-2" class="custom-control-label">Mate</label>
+											</div>
+											<hr>
+											<div class="custom-control custom-radio">
+												<input id="paint-finish-3" name="paint-finish" value="Métallisée" class="custom-control-input" type="radio">
+												<label for="paint-finish-3" class="custom-control-label">Métallisée</label>
+											</div>
+											<hr>
+											<div class="custom-control custom-radio">
+												<input id="paint-finish-4" name="paint-finish" value="Satinée" class="custom-control-input" type="radio">
+												<label for="paint-finish-4" class="custom-control-label">Satinée</label>
+											</div>
+											<hr>
+										</div>
+									</div>
+									<!-- État peinture -->
+									<div class="row pb-3">
+										<div class="col">
+											<h6><label for="paint-state">État</label></h6>
+											<input id="paint-state" name="paint-state" class="custom-range" type="range" step="10" min="0" max="100">
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- Card Chromes --*>
+							<div class="card bg-light mt-3 mb-5 style="min-width: 300px"">
+								<h5 class="card-header">Chromes</h5>
+								<div class="card-body">
+									<!-- Entretien --*>
+									<div class="row pb-3">
+										<div class="col">
+											<div class="custom-control custom-checkbox">
+												<input id="chrome-conformity" type="checkbox" value="Conforme à la fiche" class="custom-control-input">
+												<label for="chrome-conformity" class="custom-control-label">Conforme à la fiche</label>
+											</div>
+											<hr>
+											<div class="custom-control custom-checkbox">
+												<input id="chrome-restoration" type="checkbox" value="Restauré" class="custom-control-input">
+												<label for="chrome-restoration" class="custom-control-label">Restauré</label>
+											</div>
+										</div>
+									</div>
+									<!-- Chrome peinture --*>
+									<div class="row pb-3">
+										<div class="col">
+											<label for="chrome-state">État</label>
+											<input id="chrome-state" class="custom-range" type="range" step="10" min="0" max="100">
+										</div>
+									</div>
+								</div>
+							</div>
+	
+							<!-- Card Roues -->
+							<div class="card bg-light mt-3 mb-5" style="min-width: 300px">
+								<h5 class="card-header">Roues</h5>
+								<div class="card-body">
+									<!-- Type de roue  -->
+									<div class="row pb-3">
+										<div class="col">
+											<h6><label for="wheel-type">Type</label></h6>
+											<input id="wheel-type" name="wheel-type" list="wheel-types" class="form-control" type="text">
+											<datalist id="wheel-types">
+												<option value="En tôle emboutie">
+												<option value="Rayons bois">
+												<option value="Rayons chromés">
+												<option value="Alliage léger">
+												<option value="Alliage léger poli">
+												<option value="Magnésium">
+												<option value="Enjoliveurs">
+											</datalist>
+										</div>
+									</div>
+									<!-- Dimension avant (en pouces) -->
+									<div class="row pb-3">
+										<div class="col-auto">
+											<h6><label for="wheel-front-size">Dimension avant</label></h6>
+											<div class="input-group">
+												<input id="wheel-front-size" name="wheel-front-size" class="form-control" type="number">
+												<div class="input-group-append">
+													<div class="input-group-text">pouces</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- État avant -->
+									<div class="row pb-3">
+										<div class="col">
+											<h6><label for="wheel-front-state">État avant</label></h6>
+											<input id="wheel-front-state" name="wheel-front-state" type="range" class="custom-range" step="10" min="0" max="100">
+										</div>
+									</div>
+									<!-- Dimension arrière (en pouces) -->
+									<div class="row pb-3">
+										<div class="col-auto">
+											<h6><label for="wheel-rear-size">Dimension arrière</label></h6>
+											<div class="input-group">
+												<input id="wheel-rear-size" name="wheel-rear-size" class="form-control" type="number">
+												<div class="input-group-append">
+													<div class="input-group-text">pouces</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- État arrière -->
+									<div class="row pb-3">
+										<div class="col">
+											<h6><label for="wheel-rear-state">État arrière</label></h6>
+											<input id="wheel-rear-state" name="wheel-rear-state" type="range" class="custom-range" step="10" min="0" max="100">
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- Card Pneus -->
+							<div class="card bg-light mt-3 mb-5" style="min-width: 300px">
+								<h5 class="card-header">Pneus</h5>
+								<div class="card-body">
+									<!-- Marque -->
+									<div class="row pb-3">
+										<div class="col">
+											<h6><label for="tire-brand">Marque</label></h6>
+											<input id="tire-brand" name="tire-brand" list="tire-brands" class="form-control" type="text">
+											<datalist id="tire-brands">
+												<option value="BF Goodrich">
+												<option value="Bridgestone">
+												<option value="Continental">
+												<option value="Cooper">
+												<option value="Dunlop">
+												<option value="Firestone">
+												<option value="Goodyear">
+												<option value="Hankook">
+												<option value="Kumho">
+												<option value="Lester">
+												<option value="Michelin">
+												<option value="Nokian">
+												<option value="Pirelli">
+												<option value="Toyo">
+												<option value="Uniroyal">
+												<option value="Vredestein">
+												<option value="Yokohama">
+											</datalist>
+										</div>
+									</div>
+									<!-- Type -->
+									<div class="row pb-3">
+										<div class="col">
+											<h6><label for="tire-type">Type</label></h6>
+											<input id="tire-type" name="tire-type" list="tire-types" class="form-control" type="text">
+											<datalist id="tire-types">
+												<option value="Conventionnels">
+												<option value="Conventionnels à flancs blancs">
+												<option value="Haute-performance à taille basse">
+												<option value="Compétition">
+											</datalist>
+										</div>
+									</div>
+									<!-- Dimension avant (en pouces) -->
+									<div class="row pb-3">
+										<div class="col-auto">
+											<h6><label for="tire-front-size">Dimension avant</label></h6>
+											<div class="input-group">
+												<input id="tire-front-size" name="tire-front-size" class="form-control" type="number">
+												<div class="input-group-append">
+													<div class="input-group-text">pouces</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- État avant -->
+									<div class="row pb-3">
+										<div class="col">
+											<h6><label for="tire-front-state">État avant</label></h6>
+											<input id="tire-front-state" name="tire-front-state" type="range" class="custom-range" step="10" min="0" max="100">
+										</div>
+									</div>
+									<!-- Dimension arrière (en pouces) -->
+									<div class="row pb-3">
+										<div class="col-auto">
+											<h6><label for="tire-rear-size">Dimension arrière</label></h6>
+											<div class="input-group">
+												<input id="tire-rear-size" name="tire-rear-size" class="form-control" type="number">
+												<div class="input-group-append">
+													<div class="input-group-text">pouces</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- État arrière -->
+									<div class="row pb-3">
+										<div class="col">
+											<h6><label for="tire-rear-state">État arrière</label></h6>
+											<input id="tire-rear-state" name="tire-rear-state" type="range" class="custom-range" step="10" min="0" max="100">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Onglet Intérieur -->
+					<div class="swiper-slide tab-section d-flex flex-wrap align-items-start justify-content-around px-3 pb-5">
+						<div class="col-md">
+							<!-- Card État intérieur-->
+							<div class="card bg-light mt-3 mb-5">
+								<h5 class="card-header">État intérieur</h5>
+								<div class="card-body">
+									<!-- Tableau de bord -->
+									<div class="row pb-3">
+										<div class="col">
+											<h6><label for="dashboard-state">Tableau de bord</label></h6>
+											<input id="dashboard-state" name="dashboard-state" type="range" class="custom-range" step="10" min="0" max="100">
+										</div>
+										<div class="col-auto">
+											<br>
+											<div class="input-group">
+												<div class="custom-control custom-radio custom-control-inline">
+													<input id="dashboard-modification-1" value="Modifié" name="dashboard-modification" class="custom-control-input" type="radio" value="modifié">
+													<label for="dashboard-modification-1" class="custom-control-label">Modifié</label>
+												</div>
+												<div class="custom-control custom-radio custom-control-inline">
+													<input id="dashboard-modification-2" value="Modernisé" name="dashboard-modification" class="custom-control-input" type="radio" value="modernisé">
+													<label for="dashboard-modification-2" class="custom-control-label">Modernisé</label>
+												</div>
+												<div class="custom-control custom-radio custom-control-inline">
+													<input id="dashboard-modification-3" value="Conforme à l'origine" name="dashboard-modification" class="custom-control-input" type="radio" value="conforme">
+													<label for="dashboard-modification-3" class="custom-control-label">Conforme</label>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- Console -->
+									<div class="row pb-3">
+										<div class="col">
+											<h6><label for="console-state">Console</label></h6>
+											<input id="console-state" name="console-state" type="range" class="custom-range" step="10" min="0" max="100">
+										</div>
+										<div class="col-auto">
+											<br>
+											<div class="input-group">
+												<div class="custom-control custom-radio custom-control-inline">
+													<input id="console-modification-1" value="Modifié" name="console-modification" class="custom-control-input" type="radio" value="modifié">
+													<label for="console-modification-1" class="custom-control-label">Modifié</label>
+												</div>
+												<div class="custom-control custom-radio custom-control-inline">
+													<input id="console-modification-2" value="Modernisé" name="console-modification" class="custom-control-input" type="radio" value="modernisé">
+													<label for="console-modification-2" class="custom-control-label">Modernisé</label>
+												</div>
+												<div class="custom-control custom-radio custom-control-inline">
+													<input id="console-modification-3" value="Conforme à l'origine" name="console-modification" class="custom-control-input" type="radio" value="conforme">
+													<label for="console-modification-3" class="custom-control-label">Conforme</label>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- Instrumentation -->
+									<div class="row pb-3">
+										<div class="col">
+											<h6><label for="instrumentation-state">Instrumentation</label></h6>
+											<input id="instrumentation-state" name="instrumentation-state" type="range" class="custom-range" step="10" min="0" max="100">
+										</div>
+										<div class="col-auto">
+											<br>
+											<div class="input-group">
+												<div class="custom-control custom-radio custom-control-inline">
+													<input id="instrumentation-modification-1" value="Modifié" name="instrumentation-modification" class="custom-control-input" type="radio" value="modifié">
+													<label for="instrumentation-modification-1" class="custom-control-label">Modifié</label>
+												</div>
+												<div class="custom-control custom-radio custom-control-inline">
+													<input id="instrumentation-modification-2" value="Modernisé" name="instrumentation-modification" class="custom-control-input" type="radio" value="modernisé">
+													<label for="instrumentation-modification-2" class="custom-control-label">Modernisé</label>
+												</div>
+												<div class="custom-control custom-radio custom-control-inline">
+													<input id="instrumentation-modification-3" value="Conforme à l'origine" name="instrumentation-modification" class="custom-control-input" type="radio" value="conforme">
+													<label for="instrumentation-modification-3" class="custom-control-label">Conforme</label>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- Siège conducteur -->
+									<div class="row pb-3">
+										<div class="col">
+											<h6><label for="driver-sit-state">Siège conducteur</label></h6>
+											<input id="driver-sit-state" name="driver-sit-state" type="range" class="custom-range" step="10" min="0" max="100">
+										</div>
+										<div class="col-auto">
+											<br>
+											<div class="input-group">
+												<div class="custom-control custom-radio custom-control-inline">
+													<input id="driver-sit-modification-1" value="Modifié" name="driver-sit-modification" class="custom-control-input" type="radio" value="modifié">
+													<label for="driver-sit-modification-1" class="custom-control-label">Modifié</label>
+												</div>
+												<div class="custom-control custom-radio custom-control-inline">
+													<input id="driver-sit-modification-2" value="Modernisé" name="driver-sit-modification" class="custom-control-input" type="radio" value="modernisé">
+													<label for="driver-sit-modification-2" class="custom-control-label">Modernisé</label>
+												</div>
+												<div class="custom-control custom-radio custom-control-inline">
+													<input id="driver-sit-modification-3" value="Conforme à l'origine" name="driver-sit-modification" class="custom-control-input" type="radio" value="conforme">
+													<label for="driver-sit-modification-3" class="custom-control-label">Conforme</label>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- Siège passager -->
+									<div class="row pb-3">
+										<div class="col">
+											<h6><label for="passenger-sit-state">Siège passager</label></h6>
+											<input id="passenger-sit-state" name="passenger-sit-state" type="range" class="custom-range" step="10" min="0" max="100">
+										</div>
+										<div class="col-auto">
+											<br>
+											<div class="input-group">
+												<div class="custom-control custom-radio custom-control-inline">
+													<input id="passenger-sit-modification-1" value="Modifié" name="passenger-sit-modification" class="custom-control-input" type="radio" value="modifié">
+													<label for="passenger-sit-modification-1" class="custom-control-label">Modifié</label>
+												</div>
+												<div class="custom-control custom-radio custom-control-inline">
+													<input id="passenger-sit-modification-2" value="Modernisé" name="passenger-sit-modification" class="custom-control-input" type="radio" value="modernisé">
+													<label for="passenger-sit-modification-2" class="custom-control-label">Modernisé</label>
+												</div>
+												<div class="custom-control custom-radio custom-control-inline">
+													<input id="passenger-sit-modification-3" value="Conforme à l'origine" name="passenger-sit-modification" class="custom-control-input" type="radio" value="conforme">
+													<label for="passenger-sit-modification-3" class="custom-control-label">Conforme</label>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- Siège arrière -->
+									<div class="row pb-3">
+										<div class="col">
+											<h6><label for="back-sits-state">Sièges arrière</label></h6>
+											<input id="back-sits-state" name="back-sits-state" type="range" class="custom-range" step="10" min="0" max="100">
+										</div>
+										<div class="col-auto">
+											<br>
+											<div class="input-group">
+												<div class="custom-control custom-radio custom-control-inline">
+													<input id="back-sits-modification-1" value="Modifié" name="back-sits-modification" class="custom-control-input" type="radio" value="modifié">
+													<label for="back-sits-modification-1" class="custom-control-label">Modifié</label>
+												</div>
+												<div class="custom-control custom-radio custom-control-inline">
+													<input id="back-sits-modification-2" value="Modernisé" name="back-sits-modification" class="custom-control-input" type="radio" value="modernisé">
+													<label for="back-sits-modification-2" class="custom-control-label">Modernisé</label>
+												</div>
+												<div class="custom-control custom-radio custom-control-inline">
+													<input id="back-sits-modification-3" value="Conforme à l'origine" name="back-sits-modification" class="custom-control-input" type="radio" value="conforme">
+													<label for="back-sits-modification-3" class="custom-control-label">Conforme</label>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- Garniture intérieure -->
+									<div class="row pb-3">
+										<div class="col">
+											<h6><label for="interior-lining-state">Garniture intérieure</label></h6>
+											<input id="interior-lining-state" name="interior-lining-state" type="range" class="custom-range" step="10" min="0" max="100">
+										</div>
+										<div class="col-auto">
+											<br>
+											<div class="input-group">
+												<div class="custom-control custom-radio custom-control-inline">
+													<input id="interior-lining-modification-1" value="Modifié" name="interior-lining-modification" class="custom-control-input" type="radio" value="modifié">
+													<label for="interior-lining-modification-1" class="custom-control-label">Modifié</label>
+												</div>
+												<div class="custom-control custom-radio custom-control-inline">
+													<input id="interior-lining-modification-2" value="Modernisé" name="interior-lining-modification" class="custom-control-input" type="radio" value="modernisé">
+													<label for="interior-lining-modification-2" class="custom-control-label">Modernisé</label>
+												</div>
+												<div class="custom-control custom-radio custom-control-inline">
+													<input id="interior-lining-modification-3" value="Conforme à l'origine" name="interior-lining-modification" class="custom-control-input" type="radio" value="conforme">
+													<label for="interior-lining-modification-3" class="custom-control-label">Conforme</label>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- Garniture de pavillon -->
+									<div class="row pb-3">
+										<div class="col">
+											<h6><label for="overhead-lining-state">Garniture du pavillon</label></h6>
+											<input id="overhead-lining-state" name="overhead-lining-state" type="range" class="custom-range" step="10" min="0" max="100">
+										</div>
+										<div class="col-auto">
+											<br>
+											<div class="input-group">
+												<div class="custom-control custom-radio custom-control-inline">
+													<input id="overhead-lining-modification-1" value="Modifié" name="overhead-lining-modification" class="custom-control-input" type="radio" value="modifié">
+													<label for="overhead-lining-modification-1" class="custom-control-label">Modifié</label>
+												</div>
+												<div class="custom-control custom-radio custom-control-inline">
+													<input id="overhead-lining-modification-2" value="Modernisé" name="overhead-lining-modification" class="custom-control-input" type="radio" value="modernisé">
+													<label for="overhead-lining-modification-2" class="custom-control-label">Modernisé</label>
+												</div>
+												<div class="custom-control custom-radio custom-control-inline">
+													<input id="overhead-lining-modification-3" value="Conforme à l'origine" name="overhead-lining-modification" class="custom-control-input" type="radio" value="conforme">
+													<label for="overhead-lining-modification-3" class="custom-control-label">Conforme</label>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- Tapis -->
+									<div class="row pb-3">
+										<div class="col">
+											<h6><label for="carpet-state">Tapis</label></h6>
+											<input id="carpet-state" name="carpet-state" type="range" class="custom-range" step="10" min="0" max="100">
+										</div>
+										<div class="col-auto">
+											<br>
+											<div class="input-group">
+												<div class="custom-control custom-radio custom-control-inline">
+													<input id="carpet-modification-1" value="Modifié" name="carpet-modification" class="custom-control-input" type="radio" value="modifié">
+													<label for="carpet-modification-1" class="custom-control-label">Modifié</label>
+												</div>
+												<div class="custom-control custom-radio custom-control-inline">
+													<input id="carpet-modification-2" value="Modernisé" name="carpet-modification" class="custom-control-input" type="radio" value="modernisé">
+													<label for="carpet-modification-2" class="custom-control-label">Modernisé</label>
+												</div>
+												<div class="custom-control custom-radio custom-control-inline">
+													<input id="carpet-modification-3" value="Conforme à l'origine" name="carpet-modification" class="custom-control-input" type="radio" value="conforme">
+													<label for="carpet-modification-3" class="custom-control-label">Conforme</label>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- Panneaux de garnissage - portière droite -->
+									<div class="row pb-3">
+										<div class="col">
+											<h6><label for="right-door-lining-state">Panneaux de garnissage - portière droite</label></h6>
+											<input id="right-door-lining-state" name="right-door-lining-state" type="range" class="custom-range" step="10" min="0" max="100">
+										</div>
+										<div class="col-auto">
+											<br>
+											<div class="input-group">
+												<div class="custom-control custom-radio custom-control-inline">
+													<input id="right-door-lining-modification-1" value="Modifié" name="right-door-lining-modification" class="custom-control-input" type="radio" value="modifié">
+													<label for="right-door-lining-modification-1" class="custom-control-label">Modifié</label>
+												</div>
+												<div class="custom-control custom-radio custom-control-inline">
+													<input id="right-door-lining-modification-2" value="Modernisé" name="right-door-lining-modification" class="custom-control-input" type="radio" value="modernisé">
+													<label for="right-door-lining-modification-2" class="custom-control-label">Modernisé</label>
+												</div>
+												<div class="custom-control custom-radio custom-control-inline">
+													<input id="right-door-lining-modification-3" value="Conforme à l'origine" name="right-door-lining-modification" class="custom-control-input" type="radio" value="conforme">
+													<label for="right-door-lining-modification-3" class="custom-control-label">Conforme</label>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- Panneaux de garnissage - portière gauche -->
+									<div class="row pb-3">
+										<div class="col">
+											<h6><label for="left-door-lining-state">Panneaux de garnissage - portière gauche</label></h6>
+											<input id="left-door-lining-state" name="left-door-lining-state" type="range" class="custom-range" step="10" min="0" max="100">
+										</div>
+										<div class="col-auto">
+											<br>
+											<div class="input-group">
+												<div class="custom-control custom-radio custom-control-inline">
+													<input id="left-door-lining-modification-1" value="Modifié" name="left-door-lining-modification" class="custom-control-input" type="radio" value="modifié">
+													<label for="left-door-lining-modification-1" class="custom-control-label">Modifié</label>
+												</div>
+												<div class="custom-control custom-radio custom-control-inline">
+													<input id="left-door-lining-modification-2" value="Modernisé" name="left-door-lining-modification" class="custom-control-input" type="radio" value="modernisé">
+													<label for="left-door-lining-modification-2" class="custom-control-label">Modernisé</label>
+												</div>
+												<div class="custom-control custom-radio custom-control-inline">
+													<input id="left-door-lining-modification-3" value="Conforme à l'origine" name="left-door-lining-modification" class="custom-control-input" type="radio" value="conforme">
+													<label for="left-door-lining-modification-3" class="custom-control-label">Conforme</label>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- Joints d'étanchéité des portières -->
+									<div class="row pb-3">
+										<div class="col">
+											<h6><label for="door-seals-state">Joints d'étanchéité des portières</label></h6>
+											<input id="door-seals-state" name="door-seals-state" type="range" class="custom-range" step="10" min="0" max="100">
+										</div>
+										<div class="col-auto">
+											<br>
+											<div class="input-group">
+												<div class="custom-control custom-radio custom-control-inline">
+													<input id="door-seals-modification-1" value="Modifié" name="door-seals-modification" class="custom-control-input" type="radio" value="modifié">
+													<label for="door-seals-modification-1" class="custom-control-label">Modifié</label>
+												</div>
+												<div class="custom-control custom-radio custom-control-inline">
+													<input id="door-seals-modification-2" value="Modernisé" name="door-seals-modification" class="custom-control-input" type="radio" value="modernisé">
+													<label for="door-seals-modification-2" class="custom-control-label">Modernisé</label>
+												</div>
+												<div class="custom-control custom-radio custom-control-inline">
+													<input id="door-seals-modification-3" value="Conforme à l'origine" name="door-seals-modification" class="custom-control-input" type="radio" value="conforme">
+													<label for="door-seals-modification-3" class="custom-control-label">Conforme</label>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-sm-auto">
+							<!-- Card Garniture -->
+							<div class="card bg-light mt-3 mb-5" style="min-width: 300px">
+								<h5 class="card-header">Garniture</h5>
+								<div class="card-body">
+									<!-- Garniture -->
+									<div class="row pb-3">
+										<div class="col">
+											<h6>Matière</h6>
+											<div class="custom-control custom-checkbox">
+												<input id="lining-material-1" name="lining-material-1" type="checkbox" value="Cuir" class="custom-control-input">
+												<label for="lining-material-1" class="custom-control-label">Cuir</label>
+											</div>
+											<hr>
+											<div class="custom-control custom-checkbox">
+												<input id="lining-material-2" name="lining-material-2" type="checkbox" value="Tissu" class="custom-control-input">
+												<label for="lining-material-2" class="custom-control-label">Tissu</label>
+											</div>
+											<hr>
+											<div class="custom-control custom-checkbox">
+												<input id="lining-material-3" name="lining-material-4" type="checkbox" value="Velours" class="custom-control-input">
+												<label for="lining-material-3" class="custom-control-label">Velours</label>
+											</div>
+											<hr>
+											<div class="custom-control custom-checkbox">
+												<input id="lining-material-4" name="lining-material-4" type="checkbox" value="Vinyle" class="custom-control-input">
+												<label for="lining-material-4" class="custom-control-label">Vinyle</label>
+											</div>
+											<hr>
+											<label for="lining-material-5">Autre(s)</label>
+											<input id="lining-material-5" name="lining-material-5" placeholder="(séparées par des virgules)" class="form-control" type="text">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Onglet Options -->
+					<div class="swiper-slide tab-section d-flex flex-wrap align-items-stretch justify-content-center px-3 pb-5" name="examen">
+						<div class="col-auto">
+							<!-- Card options extérieures -->
+							<div class="card bg-light mt-3 mb-5" style="min-width: 300px">
+								<h5 class="card-header">Options extérieures</h5>
+								<div class="card-body">
+									<div class="row">
+										<div class="col">
+											<div class="form-group">
+												<div class="custom-control custom-checkbox">
+													<input id="options-exterior-1" name="options-exterior-1" value="Attache Remorque" type="checkbox" class="custom-control-input">
+													<label for="options-exterior-1" class="custom-control-label">Attache Remorque</label>
+												</div>
+												<hr>
+												<div class="custom-control custom-checkbox">
+													<input id="options-exterior-2" name="options-exterior-2" value="Phares anti-brouillard" type="checkbox" class="custom-control-input">
+													<label for="options-exterior-2" class="custom-control-label">Phares anti-brouillard</label>
+												</div>
+												<hr>
+												<div class="custom-control custom-checkbox">
+													<input id="options-exterior-3" name="options-exterior-3" value="Vitres teintées" type="checkbox" class="custom-control-input">
+													<label for="options-exterior-3" class="custom-control-label">Vitres teintées</label>
+												</div>
+												<hr>
+												<div class="custom-control custom-checkbox">
+													<input id="options-exterior-4" name="options-exterior-4" value="Phares longue portée" type="checkbox" class="custom-control-input">
+													<label for="options-exterior-4" class="custom-control-label">Phares longue portée</label>
+												</div>
+												<hr>
+												<div class="custom-control custom-checkbox">
+													<input id="options-exterior-5" name="options-exterior-5" value="Toit ouvrant électrique" type="checkbox" class="custom-control-input">
+													<label for="options-exterior-5" class="custom-control-label">Toit ouvrant électrique</label>
+												</div>
+												<hr>
+												<div class="custom-control custom-checkbox">
+													<input id="options-exterior-6" name="options-exterior-6" value="Toit ouvrant" type="checkbox" class="custom-control-input">
+													<label for="options-exterior-6" class="custom-control-label">Toit ouvrant</label>
+												</div>
+												<hr>
+												<label for="options-exterior-7">Autre(s)</label>
+												<input id="options-exterior-7" name="options-exterior-7" placeholder="(séparées par des virgules)" class="form-control" type="text">
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-auto">
+							<!-- Card Options intérieures-->
+							<div class="card bg-light mt-3 mb-5" style="min-width: 300px">
+								<h5 class="card-header">Options Intérieures</h5>
+								<div class="card-body">
+									<div class="row">
+										<div class="col">
+											<div class="form-group">
+												<div class="custom-control custom-checkbox">
+													<input id="options-interior-1" name="options-interior-1" value="Climatisation" type="checkbox" class="custom-control-input">
+													<label for="options-interior-1" class="custom-control-label">Climatisation</label>
+												</div>
+												<hr>
+												<div class="custom-control custom-checkbox">
+													<input id="options-interior-2" name="options-interior-2" value="Couvre pédale en aluminium" type="checkbox" class="custom-control-input">
+													<label for="options-interior-2" class="custom-control-label">Couvre pédale en aluminium</label>
+												</div>
+												<hr>
+												<div class="custom-control custom-checkbox">
+													<input id="options-interior-3" name="options-interior-3" value="Intérieur cuir" type="checkbox" class="custom-control-input">
+													<label for="options-interior-3" class="custom-control-label">Intérieur cuir</label>
+												</div>
+												<hr>
+												<div class="custom-control custom-checkbox">
+													<input id="options-interior-4" name="options-interior-4" value="Ordinateur de bord" type="checkbox" class="custom-control-input">
+													<label for="options-interior-4" class="custom-control-label">Ordinateur de bord</label>
+												</div>
+												<hr>
+												<div class="custom-control custom-checkbox">
+													<input id="options-interior-5" name="options-interior-5" value="Radio" type="checkbox" class="custom-control-input">
+													<label for="options-interior-5" class="custom-control-label">Radio</label>
+												</div>
+												<hr>
+												<div class="custom-control custom-checkbox">
+													<input id="options-interior-6" name="options-interior-6" value="Repose pied en aluminium" type="checkbox" class="custom-control-input">
+													<label for="options-interior-6" class="custom-control-label">Repose pied en aluminium</label>
+												</div>
+												<hr>
+												<div class="custom-control custom-checkbox">
+													<input id="options-interior-7" name="options-interior-7" value="Sièges à réglage électronique" type="checkbox" class="custom-control-input">
+													<label for="options-interior-7" class="custom-control-label">Sièges à réglage électronique</label>
+												</div>
+												<hr>
+												<div class="custom-control custom-checkbox">
+													<input id="options-interior-8" name="options-interior-8" value="Volant accessoire" type="checkbox" class="custom-control-input">
+													<label for="options-interior-8" class="custom-control-label">Volant accessoire</label>
+												</div>
+												<hr>
+												<label for="options-interior-9">Autre(s)</label>
+												<input id="options-interior-9" name="options-interior-9" placeholder="(séparées par des virgules)" class="form-control" type="text">
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-auto">
+							<!-- Card Options de sécurité -->
+							<div class="card bg-light mt-3 mb-5" style="min-width: 300px">
+								<h5 class="card-header">Options de sécurité</h5>
+								<div class="card-body">
+									<div class="row">
+										<div class="col">
+											<div class="form-group">
+												<div class="custom-control custom-checkbox">
+													<input id="options-safety-1" name="options-safety-1" value="Système ABS" type="checkbox" class="custom-control-input">
+													<label for="options-safety-1" class="custom-control-label">Système ABS</label>
+												</div>
+												<hr>
+												<div class="custom-control custom-checkbox">
+													<input id="options-safety-2" name="options-safety-2" value="Régulateur de vitesse" type="checkbox" class="custom-control-input">
+													<label for="options-safety-2" class="custom-control-label">Régulateur de vitesse</label>
+												</div>
+												<hr>
+												<div class="custom-control custom-checkbox">
+													<input id="options-safety-3" name="options-safety-3" value="Direction assistée" type="checkbox" class="custom-control-input">
+													<label for="options-safety-3" class="custom-control-label">Direction assistée</label>
+												</div>
+												<hr>
+												<div class="custom-control custom-checkbox">
+													<input id="options-safety-4" name="options-safety-4" value="Contacteur à clé au tableau de bord" type="checkbox" class="custom-control-input">
+													<label for="options-safety-4" class="custom-control-label">Contacteur à clé au tableau de bord</label>
+												</div>
+												<hr>
+												<div class="custom-control custom-checkbox">
+													<input id="options-safety-5" name="options-safety-5" value="Contacteur à clé condamnant la direction" type="checkbox" class="custom-control-input">
+													<label for="options-safety-5" class="custom-control-label">Contacteur à clé condamnant la direction</label>
+												</div>
+												<hr>
+												<div class="custom-control custom-checkbox">
+													<input id="options-safety-6" name="options-safety-6" value="Robinet de batterie" type="checkbox" class="custom-control-input">
+													<label for="options-safety-6" class="custom-control-label">Robinet de batterie</label>
+												</div>
+												<hr>
+												<div class="custom-control custom-checkbox">
+													<input id="options-safety-7" name="options-safety-7" value="Coupe circuit à clé" type="checkbox" class="custom-control-input">
+													<label for="options-safety-7" class="custom-control-label">Coupe circuit à clé</label>
+												</div>
+												<hr>
+												<div class="custom-control custom-checkbox">
+													<input id="options-safety-8" name="options-safety-8" value="Alarme coupe circuit" type="checkbox" class="custom-control-input">
+													<label for="options-safety-8" class="custom-control-label">Alarme coupe circuit</label>
+												</div>
+												<hr>
+												<div class="custom-control custom-checkbox">
+													<input id="options-safety-9" name="options-safety-9" value="Écrous de roues anti-vol" type="checkbox" class="custom-control-input">
+													<label for="options-safety-9" class="custom-control-label">Écrous de roues anti-vol</label>
+												</div>
+												<hr>
+												<div class="custom-control custom-checkbox">
+													<input id="options-safety-10" name="options-safety-10" value="Canne anti-vol" type="checkbox" class="custom-control-input">
+													<label for="options-safety-10" class="custom-control-label">Canne anti-vol</label>
+												</div>
+												<hr>
+												<div class="custom-control custom-checkbox">
+													<input id="options-safety-11" name="options-safety-11" value="Tracker" type="checkbox" class="custom-control-input">
+													<label for="options-safety-11" class="custom-control-label">Tracker</label>
+												</div>
+												<hr>
+												<label for="options-safety-12">Autre(s)</label>
+												<input id="options-safety-12" name="options-safety-12" placeholder="(séparées par des virgules)" class="form-control" type="text">
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Onglet Mécanique -->
+					<div class="swiper-slide tab-section d-flex flex-wrap align-items-start justify-content-center px-3 pb-5" name="mecanique">
+						<div class="col-auto">
+							<!-- Card Moteur -->
+							<div class="card bg-light mt-3 mb-5" style="min-width: 300px">
+								<h5 class="card-header">Moteur</h5>
+								<div class="card-body">
+									<!-- Marque -->
+									<div class="row pb-3">
+										<div class="col">
+											<h6><label for="engine-make">Marque</label></h6>
+											<input id="engine-make" name="engine-make" type="text" class="form-control">
+										</div>
+									</div>
+									<!-- Cylindrée -->
+									<div class="row pb-3">
+										<div class="col-auto">
+											<h6><label for="engine-displacement">Cylindrée</label></h6>
+											<div class="input-group">
+												<input id="engine-displacement" name="engine-displacement" class="form-control" type="number">
+												<div class="input-group-append">
+													<div class="input-group-text">cm³</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- Distribution -->
+									<div class="row pb-3">
+										<div class="col">
+											<h6><label for="engine-distribution">Distribution</label></h6>
+											<select id="engine-distribution" name="engine-distribution" class="form-control">
+												<option value="false" selected>Sélectionner une distribution</option>
+												<option>Latérale</option>
+												<option>Culbutée</option>
+												<option>1 arbre à came en tête</option>
+												<option>2 arbres à came en tête</option>
+											</select>
+										</div>
+									</div>
+									<!-- Carburateurs -->
+									<div class="row pb-3">
+										<div class="col">
+											<h6><label for="engine-carburator">Disposition des carburateurs</label></h6>
+											<select id="engine-carburator" name="engine-carburator" class="form-control">
+												<option value="false" selected>Sélectionner une disposition</option>
+												<option>Horizontale</option>
+												<option>Semi-horizontale</option>
+												<option>Verticale</option>
+												<option>Inversée</option>
+											</select>
+										</div>
+									</div>
+									<!-- Présentation moteur -->
+									<div class="row pb-3">
+										<div class="col">
+											<h6><label for="engine-presentation">Présentation du compartiment moteur</label></h6>
+											<input id="engine-presentation" name="engine-presentation" class="custom-range" type="range" step="5" min="0" max="100">
+										</div>
+									</div>
+									<!-- Bruit moteur -->
+									<div class="row pb-3">
+										<div class="col">
+											<h6><label for="engine-noise">Bruit moteur</label></h6>
+											<input id="engine-noise" name="engine-noise" class="custom-range" type="range" step="5" min="0" max="100">
+										</div>
+									</div>
+									<!-- Entretien -->
+									<div class="row pb-3">
+										<div class="col">
+											<hr>
+											<div class="custom-control custom-checkbox">
+												<input id="engine-restoration" name="engine-restoration" type="checkbox" class="custom-control-input">
+												<label for="engine-restoration" class="custom-control-label">Restauration en cours</label>
+											</div>
+											<hr>
+											<div class="custom-control custom-checkbox">
+												<input id="engine-incomplete" name="engine-incomplete" type="checkbox" class="custom-control-input">
+												<label for="engine-incomplete" class="custom-control-label">Incomplet</label>
+											</div>
+											<hr>
+											<div class="custom-control custom-checkbox">
+												<input id="engine-storage" name="engine-storage" type="checkbox" class="custom-control-input">
+												<label for="engine-storage" class="custom-control-label">Véhicule en remisage</label>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-auto">
+							<!-- Boîte de vitesse -->
+							<div class="card bg-light mt-3 mb-5" style="min-width: 300px">
+								<h5 class="card-header">Boîte de vitesse</h5>
+								<div class="card-body">
+									<!-- Rapports de vitesse -->
+									<div class="row pb-3">
+										<div class="col">
+											<h6><label for="gearbox-gears">Nombre de rapports</label></h6>
+											<input id="gearbox-gears" name="gearbox-gears" class="custom-range" type="range" step="1" min="1" max="8">
+											<div class="d-flex justify-content-between px-2">
+												<span class="tick">1</span>
+												<span class="tick"></span>
+												<span class="tick"></span>
+												<span class="tick"></span>
+												<span class="tick">5</span>
+												<span class="tick">6</span>
+												<span class="tick">7</span>
+												<span class="tick">8</span>
+											</div>
+										</div>
+									</div>
+									<!-- Type -->
+									<div class="row pb-3">
+										<div class="col">
+											<h6><label for="gearbox-type">Type</label></h6>
+											<select id="gearbox-type" name="gearbox-type" class="form-control">
+												<option value="false" selected>Sélectionner une disposition</option>
+												<option>Manuelle</option>
+												<option>Automatique</option>
+												<option>Séquentielle</option>
+												<option>Overdrive</option>
+												<option>Surmultipliée</option>
+											</select>
+										</div>
+									</div>
+									<!-- Transmission -->
+									<div class="row pb-3">
+										<div class="col">
+											<h6>Transmission</h6>
+											<hr>
+											<div class="custom-control custom-radio">
+												<input id="gearbox-transmission-1" name="gearbox-transmission" class="custom-control-input" value="Traction avant" type="radio">
+												<label for="gearbox-transmission-1" class="custom-control-label">Traction avant</label>
+											</div>
+											<hr>
+											<div class="custom-control custom-radio">
+												<input id="gearbox-transmission-2" name="gearbox-transmission" class="custom-control-input" value="Propulsion" type="radio">
+												<label for="gearbox-transmission-2" class="custom-control-label">Propulsion</label>
+											</div>
+											<hr>
+											<div class="custom-control custom-radio">
+												<input id="gearbox-transmission-3" name="gearbox-transmission" class="custom-control-input" value="Intégrale" type="radio">
+												<label for="gearbox-transmission-3" class="custom-control-label">Intégrale</label>
+											</div>
+											<hr>
+										</div>
+									</div>
+									<!-- Différentiel -->
+									<div class="row pb-3">
+										<div class="col">
+											<h6>Différentiel</h6>
+											<hr>
+											<div class="custom-control custom-radio">
+												<input id="gearbox-differential-1" name="gearbox-differential" class="custom-control-input" value="Auto-bloquant" type="radio">
+												<label for="gearbox-differential-1" class="custom-control-label">Auto-bloquant</label>
+											</div>
+											<hr>
+											<div class="custom-control custom-radio">
+												<input id="gearbox-differential-2" name="gearbox-differential" class="custom-control-input" value="À glissement limité" type="radio">
+												<label for="gearbox-differential-2" class="custom-control-label">À glissement limité</label>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-auto">
+							<!-- Autres éléments -->
+							<div class="card bg-light mt-3 mb-5" style="min-width: 300px">
+								<h5 class="card-header">Autres éléments</h5>
+								<div class="card-body">
+									<!-- Système de freinage -->
+									<div class="row pb-3">
+										<div class="col">
+											<h6>Système de freinage</h6>
+											<hr>
+											<div class="custom-control custom-checkbox">
+												<input id="breaks-option-1" name="breaks-option-1" type="checkbox" value="Freins assistés" class="custom-control-input">
+												<label for="breaks-option-1" class="custom-control-label">Freins assistés</label>
+											</div>
+											<hr>
+											<div class="custom-control custom-checkbox">
+												<input id="breaks-option-2" name="breaks-option-2" type="checkbox" value="ABS" class="custom-control-input">
+												<label for="breaks-option-2" class="custom-control-label">ABS</label>
+											</div>
+											<hr>
+											<div class="custom-control custom-checkbox">
+												<input id="breaks-option-3" name="breaks-option-3" type="checkbox" value="Tambours avant" class="custom-control-input">
+												<label for="breaks-option-3" class="custom-control-label">Tambours avant</label>
+											</div>
+											<hr>
+											<div class="custom-control custom-checkbox">
+												<input id="breaks-option-4" name="breaks-option-4" type="checkbox" value="Tambours arrière" class="custom-control-input">
+												<label for="breaks-option-4" class="custom-control-label">Tambours arrière</label>
+											</div>
+											<hr>
+											<div class="custom-control custom-checkbox">
+												<input id="breaks-option-5" name="breaks-option-5" type="checkbox" value="Disques avant" class="custom-control-input">
+												<label for="breaks-option-5" class="custom-control-label">Disques avant</label>
+											</div>
+											<hr>
+											<div class="custom-control custom-checkbox">
+												<input id="breaks-option-6" name="breaks-option-6" type="checkbox" value="Quatre disques" class="custom-control-input">
+												<label for="breaks-option-6" class="custom-control-label">Quatre disques</label>
+											</div>
+											<hr>
+											<div class="col">
+												<label for="breaks-option-7">Autre(s)</label>
+												<input id="breaks-option-7" name="breaks-option-7" placeholder="(séparées par des virgules)" class="form-control" type="text">
+											</div>
+											<div class="custom-control custom-switch pt-4">
+												<input id="breaks-modified" name="breaks-modified" type="checkbox" class="custom-control-input">
+												<label for="breaks-modified" class="custom-control-label">Modifié par rapport à l'origine</label>
+											</div>
+											<hr>
+										</div>
+									</div>
+									<!-- Direction -->
+									<div class="row pb-3">
+										<div class="col">
+											<h6><label for="direction-type">Direction</label></h6>
+											<select id="direction-type" name="direction-type" class="form-control">
+												<option value="false" selected>Sélectionner une direction</option>
+												<option>À boitier</option>
+												<option>À crémaillère</option>
+												<option>Assistée</option>
+												<option>Électrique assistée</option>
+											</select>
+											<div class="custom-control custom-switch pt-4">
+												<input id="direction-modified" name="direction-modified" type="checkbox" class="custom-control-input">
+												<label for="direction-modified" class="custom-control-label">Modifié par rapport à l'origine</label>
+											</div>
+											<hr>
+										</div>
+									</div>
+									<!-- Système d'échappement -->
+									<div class="row pb-3">
+										<div class="col">
+											<h6><label for="exhaust-type">Système d'échappement</label></h6>
+											<select id="exhaust-type" name="exhaust-type" class="form-control">
+												<option value="false" selected>Sélectionner un échappement</option>
+												<option>Standard</option>
+												<option>Collecteur en tube</option>
+												<option>Inox</option>
+												<option>Embout chromé</option>
+											</select>
+											<div class="custom-control custom-switch pt-4">
+												<input id="exhaust-modified" name="exhaust-modified" type="checkbox" class="custom-control-input">
+												<label for="exhaust-modified" class="custom-control-label">Modifié par rapport à l'origine</label>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Onglet Synthèse -->
+					<div class="swiper-slide tab-section d-flex flex-wrap align-items-center justify-content-center px-3 pb-5" name="examen">
+						<div class="col-md-8">
+							<!-- Card Photographies -->
+							<div class="card bg-light mt-3 mb-5">
+								<h5 class="card-header">Photographies</h5>
+								<div class="card-body" id="pictureHolder">
+									<!-- Picture List -->
+									<!-- ... -->
+								</div>
+								<div class="card-footer text-center">
+									<button data-action="library" type="button" class="btn btn-outline-secondary"><img src="lib/bootstrap-icons/icons/image.svg" style="opacity: 0.7"> Importer...</button>
+									<button data-action="camera" type="button" class="btn btn-outline-secondary"><img src="lib/bootstrap-icons/icons/camera.svg" style="opacity: 0.7"> Capturer</button>
+								</div>
+							</div>
+							<!-- Card synthèse -->
+							<div class="card bg-light mt-3 mb-5">
+								<h5 class="card-header">Synthèse</h5>
+								<div class="card-body">
+									<!-- Documents disponibles -->
+									<div class="row pb-3">
+										<div class="col">
+											<h6>Documents disponibles</h6>
+											<hr>
+											<div class="custom-control custom-checkbox">
+												<input id="document-1" name="document-1" value="Carte grise" type="checkbox" class="custom-control-input">
+												<label for="document-1" class="custom-control-label">Carte grise</label>
+											</div>
+											<hr>
+											<div class="custom-control custom-checkbox">
+												<input id="document-2" name="document-2" value="Contrôle technique" type="checkbox" class="custom-control-input">
+												<label for="document-2" class="custom-control-label">Contrôle technique</label>
+											</div>
+											<hr>
+											<div class="custom-control custom-checkbox">
+												<input id="document-3" name="document-3" value="Factures" type="checkbox" class="custom-control-input">
+												<label for="document-3" class="custom-control-label">Factures</label>
+											</div>
+											<hr>
+											<div class="custom-control custom-checkbox">
+												<input id="document-4" name="document-4" value="Carnet d'entretien d'origine" type="checkbox" class="custom-control-input">
+												<label for="document-4" class="custom-control-label">Carnet d'entretien d'origine</label>
+											</div>
+											<hr>
+											<label for="document-5">Autre(s)</label>
+											<input id="document-5" name="document-5" placeholder="(séparés par des virgules)" class="form-control" type="text">
+										</div>
+									</div>
+									<!-- Commentaires -->
+									<div class="row pb-3">
+										<div class="col">
+											<h6><label for="good">Points forts du véhicule</label></h6>
+											<textarea id="good" name="good" class="form-control" rows="4"></textarea>
+										</div>
+									</div>
+									<div class="row pb-3">
+										<div class="col">
+											<h6><label for="bad">À améliorer</label></h6>
+											<textarea id="bad" name="bad" class="form-control" rows="4"></textarea>
+										</div>
+									</div>
+									<!-- Estimation -->
+									<div class="row pb-3">
+										<div class="col-auto">
+											<h6><label for="estimate">Estimation</label></h6>
+											<div class="input-group">
+												<input id="estimate" name="estimate" class="form-control" type="number">
+												<div class="input-group-append">
+													<div class="input-group-text">€</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- Envoyer ! -->
+								<div class="card-footer text-center">
+									<button data-action="sendReport" type="button" class="btn btn-lg btn-warning">Envoyer</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+
+			<!-- Function Bar-->
+			<div id="app-function">
+				<nav class="navbar navbar-dark bg-dark d-flex justify-content-between">
+
+					<!-- Logo -->
+					<div class="nav-item">
+						<button id="menu-more" type="button" class="btn btn-dark">
+							<img class="ml-2" src="img/avec-white.svg">
+						</button>
+					</div>
+
+					<!-- Toolbar -->
+					<div class="btn-group dropup" role="group" aria-label="form-nav">
+						<!-- dropup Toggle-->
+						<button id="menu-more" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="100,10" class="btn btn-light">
+							<img src="lib/bootstrap-icons/icons/three-dots-vertical.svg">
+						</button>
+						<!-- dropup -->
+						<div class="dropdown-menu my-3" aria-labelledby="menu-more">
+							<span style="opacity :0.2;" class="dropdown-item" href="#">Ouvrir ...</span>
+							<span style="opacity :0.2;" class="dropdown-item" href="#">Exporter ...</span>
+							<span class="dropdown-item" data-action="sendReport">Envoyer</span>
+						</div>
+						<!-- Import Image -->
+						<button data-action="library" type="button" class="btn btn-light">
+							<img src="lib/bootstrap-icons/icons/image.svg">
+						</button>
+						<!-- Camera -->
+						<button data-action="camera" type="button" class="btn btn-light">
+							<img src="lib/bootstrap-icons/icons/camera.svg">
+						</button>
+					</div>
+
+					<!-- Navigation Buttons -->
+					<div class="btn-group" role="group" aria-label="form-nav">
+						<!-- Previous -->
+						<button id="previous" type="button" class="btn btn-warning">
+							<img src="lib/bootstrap-icons/icons/chevron-left.svg">
+						</button>
+						<!-- Next -->
+						<button id="next" type="button" class="btn btn-warning">
+							<img src="lib/bootstrap-icons/icons/chevron-right.svg">
+						</button>
+					</div>
+
+				</nav>
+			</div>
+
+		</div>
+
+		<script type="text/javascript" src="cordova.js"></script>
+		<script type="text/javascript" src="data/profiles.js"></script>
+		<script type="text/javascript" src="js/index.js"></script>
+	</body>
+
+</html>
